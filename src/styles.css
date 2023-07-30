@@ -2,3 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'VT323';
+    src: url('./assets/fonts/VT323-Regular.ttf');
+    font-weight: 400;
+  }
+
+  html {
+    @apply text-[100%];
+  }
+
+  body {
+    @apply font-vt323;
+  }
+}

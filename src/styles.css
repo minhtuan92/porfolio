@@ -16,5 +16,7 @@
 
   body {
     @apply font-vt323;
+    --sidebar-width: 4.25rem;
+    --header-height: 5rem;
   }
 }

@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply font-vt323;
+    @apply font-vt323 leading-none text-pastel-placebo;
     --sidebar-width: 4.25rem;
     --header-height: 5rem;
   }

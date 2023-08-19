@@ -1,5 +1,5 @@
 <header
-  class="fixed top-0 flex h-[var(--header-height)] items-center justify-between border-b border-manganese-black pl-8 text-[1.625rem] backdrop-blur-[2px]"
+  class="fixed top-0 z-10 flex h-[var(--header-height)] w-[calc(100%-var(--sidebar-width))] items-center justify-between border-b border-manganese-black bg-[rgba(24,24,29,0.6)] pl-8 text-[1.625rem] backdrop-blur-[2px]"
 >
   <div class="flex h-full items-center gap-6">
     <div class="flex h-full flex-col items-center justify-center pr-6">
@@ -11,13 +11,19 @@
         class="flex h-full items-center justify-center border-l border-manganese-black px-6 last:border-r"
         *ngFor="let navigation of navigations; index as i"
         [routerLink]="[navigation.link]"
+        [routerLinkActiveOptions]="{ exact: true }"
         routerLinkActive="router-link-active"
       >
         {{ navigation.label }}
       </a>
     </div>
   </div>
-  <a class="flex h-full items-center justify-center border-l border-manganese-black px-6">
-    <p>_contact</p>
+  <a
+    class="flex h-full items-center justify-center border-l border-manganese-black px-6"
+    [routerLink]="['contact']"
+    [routerLinkActiveOptions]="{ exact: true }"
+    routerLinkActive="router-link-active"
+  >
+    _contact
   </a>
 </header>

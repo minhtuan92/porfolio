@@ -21,19 +21,19 @@ export class HeaderComponent {
     },
     {
       label: '_about',
-      link: ''
+      link: 'about'
     },
     {
       label: '_skills',
-      link: ''
+      link: 'skills'
     },
     {
       label: '_resume',
-      link: ''
+      link: 'resume'
     },
     {
       label: '_projects',
-      link: ''
+      link: 'projects'
     }
   ]
 }

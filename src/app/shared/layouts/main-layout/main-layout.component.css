@@ -1,5 +1,0 @@
-:host {
-  .router-link-active {
-    @apply text-screen-glow;
-  }
-}

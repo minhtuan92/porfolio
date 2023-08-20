@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build:gh-page && cp index.html 404.html
+        run: npm run build:gh-page && cp ./dist/my-porfolio/index.html ./dist/my-porfolio/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

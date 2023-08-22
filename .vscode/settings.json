@@ -2,5 +2,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "prettier.configPath": ".prettierrc.json",
-  "prettier.semi": false
+  "prettier.semi": false,
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  }
 }

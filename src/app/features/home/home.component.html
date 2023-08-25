@@ -1,4 +1,4 @@
-<div class="flex h-full flex-col gap-[3.75rem] px-[9.375rem] py-40">
+<div class="flex h-full flex-col gap-[3.75rem] py-[8.125rem] pl-[calc(13.625rem-var(--sidebar-width))] pr-[13.625rem]">
   <div class="inline-flex flex-col items-start gap-7">
     <p class="text-[2rem] font-normal leading-none">//Hi, I'm Tuan Tran, a...</p>
     <p class="text-[7.5rem] font-normal leading-[8.75rem] text-screen-glow">{{ '{“ _full stack developer “}' }}</p>
@@ -9,6 +9,19 @@
       native). Learning new things always excites me and I am constantly seeking new challenges to expand my knowledge
       and skills.
     </div>
-    <img class="h-[27.5rem] w-[45.75rem] rounded-3xl" src="./assets/images/my-image.jpg" alt="My Image" />
+    <img
+      class="h-[27.5rem] w-[45.75rem] rounded-3xl"
+      [hidden]="isMyImageLoading"
+      src="./assets/images/my-image.jpg"
+      alt="My Image"
+      (load)="isMyImageLoading = false"
+    />
+    <p-skeleton
+      *ngIf="isMyImageLoading"
+      styleClass="dark:bg-gray-300"
+      height="27.5rem"
+      width="45.75rem"
+      borderRadius="1.5rem"
+    ></p-skeleton>
   </div>
 </div>

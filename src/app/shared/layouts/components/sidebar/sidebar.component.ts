@@ -23,8 +23,8 @@ export class SidebarComponent implements OnInit {
   calculateLineNumbers() {
     const screenHeight = window.outerHeight
     const lineHeight = 24
-
-    const maxLineNumbers = Math.floor(screenHeight / lineHeight)
+    const zoom = Math.round((window.outerWidth / window.innerWidth) * 100) / 100
+    const maxLineNumbers = Math.floor(Math.floor(screenHeight / lineHeight) / zoom)
     this.lineNumbers = Array.from({ length: maxLineNumbers }, (_, index) => index + 1)
   }
 }

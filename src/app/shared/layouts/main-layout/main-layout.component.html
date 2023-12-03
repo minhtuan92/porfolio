@@ -17,8 +17,11 @@
     <app-header />
     <div
       overlay-scrollbars
-      [options]="{ scrollbars: { autoHide: 'leave', autoHideDelay: 100, theme: scrollbarTheme } }"
-      class="content h-[calc(100%-var(--header-height)*2)] w-full overflow-y-auto py-24 pl-[calc(11rem-var(--sidebar-width))] pr-44"
+      [options]="{
+        overflow: { x: 'hidden' },
+        scrollbars: { autoHide: 'leave', autoHideDelay: 100, theme: scrollbarTheme }
+      }"
+      class="content h-[calc(100%-var(--header-height)*2)] w-full py-24 pl-[calc(11rem-var(--sidebar-width))] pr-44"
     >
       <router-outlet></router-outlet>
     </div>

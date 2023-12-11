@@ -20,29 +20,31 @@
       <p class="animate-[zoomin_0.8s_ease-in] cursor-default text-anakiwa">
         const <span class="text-green-haze dark:text-screen-glow">email</span> =
         <span
-          pTooltip="Double click here to copy my email"
+          pTooltip="Click to copy my email"
           [showDelay]="300"
           [hideDelay]="300"
           tooltipPosition="bottom"
           class="cursor-pointer text-lavender-rose"
-          >{{ '"minhtuan92vt@gmail.com"' }}</span
+          (click)="onClick(email)"
+          aria-hidden="true"
+        >
+          "{{ email }}"</span
         >;
       </p>
     </div>
     <div class="flex flex-col gap-2">
       <p class="animate-[fadeinleft_0.5s_ease-in] text-lavender-mauve">//my skype</p>
-      <p class="animate-[zoomin_0.8s_ease-in] text-anakiwa">
+      <p class="animate-[zoomin_0.8s_ease-in] cursor-default text-anakiwa">
         const <span class="text-green-haze dark:text-screen-glow">skype</span> =
-        <span class="text-lavender-rose">"tranminhtuan92"</span>;
+        <span class="cursor-pointer text-lavender-rose" (click)="onClick(skype)" aria-hidden="true">"{{ skype }}"</span
+        >;
       </p>
     </div>
     <div class="flex flex-col gap-2">
       <p class="animate-[fadeinleft_0.5s_ease-in] text-lavender-mauve">//my linkedin</p>
-      <p class="animate-[zoomin_0.8s_ease-in] text-anakiwa">
+      <p class="animate-[zoomin_0.8s_ease-in] cursor-default text-anakiwa">
         const <span class="text-green-haze dark:text-screen-glow">linkedin</span> =
-        <a class="text-lavender-rose underline" href="https://www.linkedin.com/in/minhtuan92vt"
-          >"https://www.linkedin.com/in/minhtuan92vt"</a
-        >;
+        <a class="text-lavender-rose" target="_blank" [href]="linkedIn">"{{ linkedIn }}"</a>;
       </p>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { AngularSvgIconModule } from 'angular-svg-icon'
 import { RouterLink } from '@angular/router'
@@ -16,8 +16,19 @@ interface SocialApp {
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
+  darkModeActive = false
   constructor(private themeService: ThemeService) {}
+
+  ngOnInit(): void {
+    const theme = this.themeService.currentTheme
+    if (theme === THEME_OPTIONS.LIGHT) {
+      this.darkModeActive = false
+    } else if (theme === THEME_OPTIONS.DARK) {
+      this.darkModeActive = true
+    }
+  }
+
   socialApps: SocialApp[] = [
     {
       icon: 'linkedIn',
@@ -37,8 +48,10 @@ export class FooterComponent {
     const theme = this.themeService.currentTheme
     if (theme === THEME_OPTIONS.LIGHT) {
       localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, THEME_OPTIONS.DARK)
+      this.darkModeActive = true
     } else if (theme === THEME_OPTIONS.DARK) {
       localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, THEME_OPTIONS.LIGHT)
+      this.darkModeActive = false
     }
     this.themeService.updateTheme()
   }

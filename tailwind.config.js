@@ -20,13 +20,15 @@ module.exports = {
         'screen-glow': '#6CE9A6',
         anakiwa: '#84CAFF',
         'lavender-rose': '#FAA7E0',
-        'mine-shaft': '#383737',
+        tuna: '#29374A',
         mirage: '#1D2939',
         gallery: '#EBEBEB',
         concrete: '#F3F3F3',
         'green-haze': '#039855',
         iron: '#D7D9DD',
-        alabaster: '#F9F9F9'
+        alabaster: '#F9F9F9',
+        'rangoon-green': '#181818',
+        'dark-gray': '#808080'
       },
       boxShadow: {
         xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)'

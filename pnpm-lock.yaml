@@ -7,10 +7,13 @@ settings:
 dependencies:
   '@angular-builders/custom-webpack':
     specifier: ^17.0.0
-    version: 17.0.0(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.3.5)(typescript@5.2.2)
+    version: 17.0.0(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.4.0)(typescript@5.2.2)
   '@angular/animations':
     specifier: ^17.0.4
     version: 17.0.4(@angular/core@17.0.4)
+  '@angular/cdk':
+    specifier: ^17.0.4
+    version: 17.0.4(@angular/common@17.0.4)(@angular/core@17.0.4)(rxjs@7.8.1)
   '@angular/common':
     specifier: ^17.0.4
     version: 17.0.4(@angular/core@17.0.4)(rxjs@7.8.1)
@@ -41,9 +44,6 @@ dependencies:
   eslint-plugin-prettier:
     specifier: ^5.0.1
     version: 5.0.1(eslint-config-prettier@9.0.0)(eslint@8.54.0)(prettier@3.1.0)
-  ngx-clipboard:
-    specifier: ^16.0.0
-    version: 16.0.0(@angular/common@17.0.4)(@angular/core@17.0.4)
   overlayscrollbars:
     specifier: ^2.4.5
     version: 2.4.5
@@ -72,7 +72,7 @@ dependencies:
 devDependencies:
   '@angular-devkit/build-angular':
     specifier: ^17.0.3
-    version: 17.0.3(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.3.5)(typescript@5.2.2)
+    version: 17.0.3(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.4.0)(typescript@5.2.2)
   '@angular-eslint/builder':
     specifier: 17.1.0
     version: 17.1.0(eslint@8.54.0)(typescript@5.2.2)
@@ -143,8 +143,8 @@ devDependencies:
     specifier: ^0.5.7
     version: 0.5.7(prettier@3.1.0)
   tailwindcss:
-    specifier: ^3.3.5
-    version: 3.3.5
+    specifier: ^3.4.0
+    version: 3.4.0
   typescript:
     specifier: ~5.2.2
     version: 5.2.2
@@ -166,14 +166,14 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.20
 
-  /@angular-builders/custom-webpack@17.0.0(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.3.5)(typescript@5.2.2):
+  /@angular-builders/custom-webpack@17.0.0(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.4.0)(typescript@5.2.2):
     resolution: {integrity: sha512-gKZKRzCE4cbDYyQLu1G/2CkAFbMd0oF07jMxX+jOTADzDeOy9mPOeBaFO60oWgeknrhXf31rynho55LGrHStkg==}
     engines: {node: ^14.20.0 || ^16.13.0 || >=18.10.0}
     peerDependencies:
       '@angular/compiler-cli': ^17.0.0
     dependencies:
       '@angular-devkit/architect': 0.1700.3(chokidar@3.5.3)
-      '@angular-devkit/build-angular': 17.0.3(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.3.5)(typescript@5.2.2)
+      '@angular-devkit/build-angular': 17.0.3(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.4.0)(typescript@5.2.2)
       '@angular-devkit/core': 17.0.3(chokidar@3.5.3)
       '@angular/compiler-cli': 17.0.4(@angular/compiler@17.0.4)(typescript@5.2.2)
       lodash: 4.17.21
@@ -220,7 +220,7 @@ packages:
     transitivePeerDependencies:
       - chokidar
 
-  /@angular-devkit/build-angular@17.0.3(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.3.5)(typescript@5.2.2):
+  /@angular-devkit/build-angular@17.0.3(@angular/compiler-cli@17.0.4)(@types/node@20.10.0)(karma@6.4.2)(tailwindcss@3.4.0)(typescript@5.2.2):
     resolution: {integrity: sha512-1lx0mERC1eTHX4vf8q7kUHZNHS0jwZxbwYHAISOplwHjkzRociX0W6rx04yMXn2NCSNhK+w3xbWyAIgyYbP9nA==}
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -311,7 +311,7 @@ packages:
       semver: 7.5.4
       source-map-loader: 4.0.1(webpack@5.89.0)
       source-map-support: 0.5.21
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.0
       terser: 5.24.0
       text-table: 0.2.0
       tree-kill: 1.2.2
@@ -496,6 +496,21 @@ packages:
     dependencies:
       '@angular/core': 17.0.4(rxjs@7.8.1)(zone.js@0.14.2)
       tslib: 2.6.2
+    dev: false
+
+  /@angular/cdk@17.0.4(@angular/common@17.0.4)(@angular/core@17.0.4)(rxjs@7.8.1):
+    resolution: {integrity: sha512-mh/EuIR0NPfpNqAXBSZWuJeBMXUvUDYdKhiFWZet5NLO1bDgFe1MGLBjtW4us95k4BZsMLbCKNxJgc+4JqwUvg==}
+    peerDependencies:
+      '@angular/common': ^17.0.0 || ^18.0.0
+      '@angular/core': ^17.0.0 || ^18.0.0
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      '@angular/common': 17.0.4(@angular/core@17.0.4)(rxjs@7.8.1)
+      '@angular/core': 17.0.4(rxjs@7.8.1)(zone.js@0.14.2)
+      rxjs: 7.8.1
+      tslib: 2.6.2
+    optionalDependencies:
+      parse5: 7.1.2
     dev: false
 
   /@angular/cli@17.0.3:
@@ -6215,30 +6230,6 @@ packages:
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  /ngx-clipboard@16.0.0(@angular/common@17.0.4)(@angular/core@17.0.4):
-    resolution: {integrity: sha512-rZ/Eo1PqiKMiyF8tdjhmUkoUu68f7OzBJ7YH1YFeh2RAaNrerTaW8XfFOzppSckjFQqA1fwGSYuTTJlDhDag5w==}
-    peerDependencies:
-      '@angular/common': '>=13.0.0'
-      '@angular/core': '>=13.0.0'
-    dependencies:
-      '@angular/common': 17.0.4(@angular/core@17.0.4)(rxjs@7.8.1)
-      '@angular/core': 17.0.4(rxjs@7.8.1)(zone.js@0.14.2)
-      ngx-window-token: 7.0.0(@angular/common@17.0.4)(@angular/core@17.0.4)
-      tslib: 2.6.2
-    dev: false
-
-  /ngx-window-token@7.0.0(@angular/common@17.0.4)(@angular/core@17.0.4):
-    resolution: {integrity: sha512-5+XfRVSY7Dciu8xyCNMkOlH2UfwR9W2P1Pirz7caaZgOZDjFbL8aEO2stjfJJm2FFf1D6dlVHNzhLWGk9HGkqA==}
-    engines: {node: ^14.20.0 || ^16.13.0 || >=18.10.0}
-    peerDependencies:
-      '@angular/common': '>=13.0.0'
-      '@angular/core': '>=13.0.0'
-    dependencies:
-      '@angular/common': 17.0.4(@angular/core@17.0.4)(rxjs@7.8.1)
-      '@angular/core': 17.0.4(rxjs@7.8.1)(zone.js@0.14.2)
-      tslib: 2.6.2
-    dev: false
-
   /nice-napi@1.0.2:
     resolution: {integrity: sha512-px/KnJAJZf5RuBGcfD+Sp2pAKq0ytz8j+1NehvgIGFkvtvFrDM3T8E4x/JJODXK9WZow8RRGrbA9QQ3hs+pDhA==}
     os: ['!win32']
@@ -7889,14 +7880,14 @@ packages:
     dependencies:
       cssesc: 3.0.0
       d3-interpolate: 2.0.1
-      tailwindcss: 3.3.5
+      tailwindcss: 3.4.0
       typescript: 4.9.5
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /tailwindcss@3.3.5:
-    resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
+  /tailwindcss@3.4.0:
+    resolution: {integrity: sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:

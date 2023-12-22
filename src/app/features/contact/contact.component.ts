@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { TooltipModule } from 'primeng/tooltip'
-import { ClipboardService } from 'ngx-clipboard'
+import { Clipboard } from '@angular/cdk/clipboard'
 
 import { ToastService } from 'src/app/core/services'
 
@@ -19,7 +19,7 @@ export class ContactComponent {
 
   constructor(
     private toastService: ToastService,
-    private clipboardService: ClipboardService
+    private clipboardService: Clipboard
   ) {}
 
   onClick(string: string) {

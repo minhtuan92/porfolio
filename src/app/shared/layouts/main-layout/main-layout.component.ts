@@ -6,7 +6,7 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component'
 import { HeaderComponent } from '../components/header/header.component'
 import { FooterComponent } from '../components/footer/footer.component'
 import { OverlayscrollbarsModule } from 'overlayscrollbars-ngx'
-import { DestroyService, ThemeService } from 'src/app/core/services'
+import { DestroyService, LayoutService, ThemeService } from 'src/app/core/services'
 import { takeUntil } from 'rxjs'
 
 @Component({
@@ -21,7 +21,8 @@ export class MainLayoutComponent implements OnInit {
   scrollbarTheme: string
   constructor(
     private themeService: ThemeService,
-    private destroyService: DestroyService
+    private destroyService: DestroyService,
+    public layoutService: LayoutService
   ) {}
 
   ngOnInit(): void {

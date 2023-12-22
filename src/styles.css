@@ -21,10 +21,14 @@
     --header-height: 3.75rem;
     @apply font-vt323 leading-none text-dark-knight dark:text-pastel-placebo;
     & .typing-header {
-      @apply inline-flex flex-nowrap text-[6.5rem] font-normal leading-[7.5rem];
+      @apply inline-flex flex-nowrap text-[6.25rem] font-normal leading-[7.5rem];
       & .typing-header__text {
         @apply text-green-haze type-skills dark:text-screen-glow;
       }
+    }
+
+    & .above-typing-header_text {
+      @apply text-[1.625rem] font-normal leading-7;
     }
   }
 }

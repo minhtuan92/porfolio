@@ -15,10 +15,10 @@ module.exports = {
     },
     extend: {
       screens: {
-        sm: { min: '600px', max: '959.98px' },
-        md: { min: '960px', max: '1279.98px' },
-        lg: { min: '1280px', max: '1919.98px' },
-        xl: { min: '1920px' }
+        sm: '600px',
+        md: '960px',
+        lg: '1280px',
+        xl: '1920px'
       },
       spacing: {
         4.5: '1.125rem',

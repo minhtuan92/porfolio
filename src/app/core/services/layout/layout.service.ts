@@ -1,7 +1,7 @@
-import { Injectable, OnDestroy, Optional, SkipSelf, inject } from '@angular/core'
+import { Injectable, OnDestroy, Optional, SkipSelf } from '@angular/core'
 import { EnsureLoadedOnceGuard } from '@shared/utils'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
-import { Subject, takeUntil } from 'rxjs'
+import { BehaviorSubject, Subject, takeUntil } from 'rxjs'
 import { SCREEN_SIZE } from '@shared/constants'
 
 @Injectable({
@@ -9,14 +9,17 @@ import { SCREEN_SIZE } from '@shared/constants'
 })
 export class LayoutService extends EnsureLoadedOnceGuard implements OnDestroy {
   destroyed$ = new Subject<void>()
-  currentScreenSize: string
   displayNameMap = new Map([
-    [Breakpoints.XSmall, SCREEN_SIZE.XSMALL],
-    [Breakpoints.Small, SCREEN_SIZE.SMALL],
-    [Breakpoints.Medium, SCREEN_SIZE.MEDIUM],
-    [Breakpoints.Large, SCREEN_SIZE.LARGE],
-    [Breakpoints.XLarge, SCREEN_SIZE.XLARGE]
+    [Breakpoints.HandsetPortrait, SCREEN_SIZE.HANDSET_PORTRAIT],
+    [Breakpoints.TabletPortrait, SCREEN_SIZE.TABLET_PORTRAIT],
+    [Breakpoints.WebPortrait, SCREEN_SIZE.WEB_PORTRAIT],
+    [Breakpoints.HandsetLandscape, SCREEN_SIZE.HANDSET_LANDSCAPE],
+    [Breakpoints.TabletLandscape, SCREEN_SIZE.TABLET_LANDSCAPE],
+    [Breakpoints.WebLandscape, SCREEN_SIZE.WEB_LANDSCAPE]
   ])
+  screenSizeChanged$ = new Subject<void>()
+  currentScreenSize: string
+  isMobile$ = new BehaviorSubject<boolean>(true)
 
   constructor(
     @Optional() @SkipSelf() parent: LayoutService,
@@ -24,7 +27,7 @@ export class LayoutService extends EnsureLoadedOnceGuard implements OnDestroy {
   ) {
     super(parent)
     this.breakpointObserver
-      .observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
+      .observe([...this.displayNameMap.keys()])
       .pipe(takeUntil(this.destroyed$))
       .subscribe((result) => {
         for (const query of Object.keys(result.breakpoints)) {
@@ -32,6 +35,13 @@ export class LayoutService extends EnsureLoadedOnceGuard implements OnDestroy {
             this.currentScreenSize = this.displayNameMap.get(query) ?? SCREEN_SIZE.UNKNOW
           }
         }
+        this.isMobile$.next(
+          !(
+            this.currentScreenSize === SCREEN_SIZE.TABLET_LANDSCAPE ||
+            this.currentScreenSize === SCREEN_SIZE.WEB_LANDSCAPE
+          )
+        )
+        this.screenSizeChanged$.next()
       })
   }
 

@@ -45,8 +45,8 @@ dependencies:
     specifier: ^15.0.1
     version: 15.0.1
   primeng:
-    specifier: 15.4.8-lts
-    version: 15.4.8-lts(@angular/common@16.1.7)(@angular/core@16.1.7)(@angular/forms@16.1.7)(rxjs@7.8.1)(zone.js@0.13.1)
+    specifier: 16.2.0
+    version: 16.2.0(@angular/common@16.1.7)(@angular/core@16.1.7)(@angular/forms@16.1.7)(rxjs@7.8.1)(zone.js@0.13.1)
   rxjs:
     specifier: ~7.8.0
     version: 7.8.1
@@ -6627,14 +6627,14 @@ packages:
       ansi-styles: 3.2.1
     dev: false
 
-  /primeng@15.4.8-lts(@angular/common@16.1.7)(@angular/core@16.1.7)(@angular/forms@16.1.7)(rxjs@7.8.1)(zone.js@0.13.1):
-    resolution: {integrity: sha512-he8CLTP8+CGhM/vqPVwdZmi5on19XoMjmvnPVomhNs5HAKY0GxndSPtAZiu6rhGIjT5BX0sJEseCiCYWmF2nKg==}
+  /primeng@16.2.0(@angular/common@16.1.7)(@angular/core@16.1.7)(@angular/forms@16.1.7)(rxjs@7.8.1)(zone.js@0.13.1):
+    resolution: {integrity: sha512-crJ5Ef6KOND2G70k6rPtkCA/AcDfbzWtFN9v/oaYjmEVQVSpyr4nux2vEHFBOs+zYBjQQOpSNtXRZmIkln5Ulg==}
     peerDependencies:
-      '@angular/common': ^15.2.1
-      '@angular/core': ^15.2.1
-      '@angular/forms': ^15.2.1
-      rxjs: ^6.0.0 || ^7.5.0
-      zone.js: ^0.10.2 || ^0.11.0 || ^0.12.0 || ^0.13.0
+      '@angular/common': ^16.2.0
+      '@angular/core': ^16.2.0
+      '@angular/forms': ^16.2.0
+      rxjs: ^6.0.0 || ^7.8.1
+      zone.js: ~0.13.0
     dependencies:
       '@angular/common': 16.1.7(@angular/core@16.1.7)(rxjs@7.8.1)
       '@angular/core': 16.1.7(rxjs@7.8.1)(zone.js@0.13.1)

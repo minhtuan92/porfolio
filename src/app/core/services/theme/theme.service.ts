@@ -15,7 +15,7 @@ export class ThemeService extends EnsureLoadedOnceGuard {
     private ref: ApplicationRef
   ) {
     super(parent)
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
       this.updateTheme()
       this.themeChange$.next()
 
@@ -39,6 +39,7 @@ export class ThemeService extends EnsureLoadedOnceGuard {
       if (!theme) localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, THEME_OPTIONS.DARK)
       this.currentTheme = THEME_OPTIONS.DARK
     }
+    this.themeChange$.next()
   }
 
   addDarkClass() {

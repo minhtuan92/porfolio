@@ -1,3 +1,5 @@
+@import 'overlayscrollbars/styles/overlayscrollbars.min.css';
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -15,8 +17,8 @@
   }
 
   body {
-    @apply font-vt323 leading-none text-dark-knight dark:text-pastel-placebo;
     --sidebar-width: 3.75rem;
     --header-height: 3.75rem;
+    @apply font-vt323 leading-none text-dark-knight dark:text-pastel-placebo;
   }
 }

@@ -41,6 +41,12 @@ dependencies:
   eslint-plugin-prettier:
     specifier: ^5.0.1
     version: 5.0.1(eslint-config-prettier@9.0.0)(eslint@8.54.0)(prettier@3.1.0)
+  overlayscrollbars:
+    specifier: ^2.4.5
+    version: 2.4.5
+  overlayscrollbars-ngx:
+    specifier: ^0.5.1
+    version: 0.5.1(@angular/common@17.0.4)(@angular/core@17.0.4)(overlayscrollbars@2.4.5)
   prettier-eslint:
     specifier: ^16.1.2
     version: 16.1.2
@@ -6527,6 +6533,23 @@ packages:
   /os-tmpdir@1.0.2:
     resolution: {integrity: sha512-D2FR03Vir7FIu45XBY20mTb+/ZSWB00sjU9jdQXt83gDrI4Ztz5Fs7/yy74g2N5SVQY4xY1qDr4rNddwYRVX0g==}
     engines: {node: '>=0.10.0'}
+
+  /overlayscrollbars-ngx@0.5.1(@angular/common@17.0.4)(@angular/core@17.0.4)(overlayscrollbars@2.4.5):
+    resolution: {integrity: sha512-DAIkPxvUl0FAj8Mvq67CqmyLtmvZUcHGcPvX5MvLcAt4gPVxnxXTnv3yuI0+bQKu3oHx6Czvqso9Fn2fAwKQYA==}
+    peerDependencies:
+      '@angular/common': '>=13.0.0'
+      '@angular/core': '>=13.0.0'
+      overlayscrollbars: ^2.0.0
+    dependencies:
+      '@angular/common': 17.0.4(@angular/core@17.0.4)(rxjs@7.8.1)
+      '@angular/core': 17.0.4(rxjs@7.8.1)(zone.js@0.14.2)
+      overlayscrollbars: 2.4.5
+      tslib: 2.6.2
+    dev: false
+
+  /overlayscrollbars@2.4.5:
+    resolution: {integrity: sha512-4OLCPuZPVdd1HnDLYS4o+kAsOCZwVz6dDA212m8ki/u3isltKyWGVjIv2aqpVHkDRf/P2K98m9Su8pdhihtAIQ==}
+    dev: false
 
   /p-limit@2.3.0:
     resolution: {integrity: sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==}

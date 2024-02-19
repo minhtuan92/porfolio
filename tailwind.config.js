@@ -75,12 +75,11 @@ module.exports = {
         }
       },
       animation: {
-        typing: 'typing 2s steps(20) infinite alternate, blink .7s infinite',
         fadein: 'fadein 0.15s linear',
         fadeinleft: 'fadeinleft 0.15s linear',
         fadeinright: 'fadeinright 0.15s linear',
-        flip: 'flip .15s linear',
-        zoomin: 'zoomin .15s linear'
+        flip: 'flip 0.15s linear',
+        zoomin: 'zoomin 0.15s linear'
       }
     }
   },

@@ -19,6 +19,7 @@
   body {
     --sidebar-width: 3.75rem;
     --header-height: 3.75rem;
+    --header-height__mobile: 3.75rem;
     @apply font-vt323 leading-none text-dark-knight dark:text-pastel-placebo;
     & .typing-header {
       @apply inline-flex flex-nowrap text-[6.25rem] font-normal leading-[7.5rem];

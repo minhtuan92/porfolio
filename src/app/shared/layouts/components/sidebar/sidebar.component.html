@@ -1,9 +1,7 @@
 <div
-  class="sidebar z-10 flex h-[100vh] w-[var(--sidebar-width)] flex-col items-start justify-between overflow-y-hidden border-r border-manganese-black px-6 py-4.5 text-2xl leading-normal text-lavender-mauve"
+  class="sidebar flex h-[100vh] w-[var(--sidebar-width)] flex-col gap-1 overflow-hidden overflow-y-hidden border-r border-manganese-black px-6 py-4.5 text-xl leading-[1.125rem] text-lavender-mauve"
 >
-  <div class="overflow-hidden">
-    <span *ngFor="let lineNumber of lineNumbers">
-      {{ lineNumber }}
-    </span>
-  </div>
+  <span *ngFor="let lineNumber of lineNumbers">
+    {{ lineNumber }}
+  </span>
 </div>

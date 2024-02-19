@@ -20,23 +20,6 @@ module.exports = {
         'screen-glow': '#6CE9A6'
       },
       keyframes: {
-        typing: {
-          '0%': {
-            width: '0%',
-            visibility: 'hidden'
-          },
-          '100%': {
-            width: '100%'
-          }
-        },
-        blink: {
-          '50%': {
-            borderColor: 'transparent'
-          },
-          '100%': {
-            borderColor: 'white'
-          }
-        },
         fadein: {
           '0%': {
             opacity: 0
@@ -95,5 +78,18 @@ module.exports = {
       }
     }
   },
-  plugins: []
+  plugins: [
+    require('tailwind-typewriter')({
+      wordsets: {
+        jobs: {
+          words: ['_frontend developer', '_backend developer', '_fullstack developer'],
+          delay: 2,
+          pauseBetween: 2,
+          writeSpeed: 0.2,
+          caretWidth: '0.5rem',
+          caretSpacing: '1rem'
+        }
+      }
+    })
+  ]
 }

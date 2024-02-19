@@ -1,16 +1,22 @@
 <div class="flex h-full flex-col gap-[3.75rem] py-[8.125rem] pl-[calc(13.625rem-var(--sidebar-width))] pr-[13.625rem]">
-  <div class="inline-flex flex-col items-start gap-7">
+  <div class="inline-flex animate-fadeinleft flex-col items-start gap-7 duration-1000 ease-in">
     <p class="text-[2rem] font-normal leading-none">//Hi, I'm Tuan Tran, a...</p>
-    <p class="text-[7.5rem] font-normal leading-[8.75rem] text-screen-glow">{{ '{“ _full stack developer “}' }}</p>
+    <div class="inline-flex flex-nowrap text-[7.5rem] font-normal leading-[8.75rem]">
+      {{ '{“' }}&nbsp;
+      <p class="text-screen-glow">{{ '_full stack developer' }}</p>
+      &nbsp;{{ '“}' }}
+    </div>
   </div>
   <div class="flex items-center justify-between">
-    <div class="w-[36.4rem] text-[2rem] font-normal leading-none text-[#A9A9A9]">
+    <div
+      class="w-[36.4rem] animate-fadeinleft text-[2rem] font-normal leading-none text-[#A9A9A9] duration-1000 ease-in"
+    >
       I am passionate about (Web development using ReactJS, NextJS) and (Mobile app development using Flutter, React
       native). Learning new things always excites me and I am constantly seeking new challenges to expand my knowledge
       and skills.
     </div>
     <img
-      class="h-[27.5rem] w-[45.75rem] rounded-3xl"
+      class="h-[27.5rem] w-[45.75rem] animate-zoomin rounded-3xl duration-1000 ease-in-out"
       [hidden]="isMyImageLoading"
       src="./assets/images/my-image.jpg"
       alt="My Image"
@@ -18,7 +24,7 @@
     />
     <p-skeleton
       *ngIf="isMyImageLoading"
-      styleClass="dark:bg-gray-300"
+      styleClass="bg-gray-300 dark:bg-[#1D2939] animate-fadeinright duration-1000 ease-in"
       height="27.5rem"
       width="45.75rem"
       borderRadius="1.5rem"

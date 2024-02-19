@@ -1,5 +1,5 @@
 :host {
   .router-link-active {
-    @apply dark:text-screen-glow;
+    @apply text-purple-600 dark:text-screen-glow;
   }
 }

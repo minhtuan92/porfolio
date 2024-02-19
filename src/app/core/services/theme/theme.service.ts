@@ -1,8 +1,8 @@
-import { ApplicationRef, Injectable, OnInit, Optional, SkipSelf } from '@angular/core'
+import { ApplicationRef, Injectable, Optional, SkipSelf } from '@angular/core'
 
 import { EnsureLoadedOnceGuard } from 'src/app/shared/utils'
 import { LOCALSTORAGE_ITEMS, THEME_OPTIONS } from 'src/app/shared/constants'
-import { BehaviorSubject, Subject } from 'rxjs'
+import { Subject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'

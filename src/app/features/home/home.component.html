@@ -1,5 +1,5 @@
-<div class="flex h-full flex-col justify-between">
-  <div class="flex animate-[fadeinleft_0.5s_ease-in] flex-col items-start gap-7">
+<div class="flex h-full flex-col justify-between gap-11 lg:gap-0">
+  <div class="flex animate-[fadeinleft_0.5s_ease-in] flex-col items-start gap-4 lg:gap-7">
     <p class="above-typing-header_text">//Hi, I'm Tuan Tran, a...</p>
     <div class="typing-header">
       <p>{{ '{“' }}&nbsp;</p>
@@ -7,8 +7,14 @@
       <p>&nbsp;{{ '“}' }}</p>
     </div>
   </div>
-  <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
-    <div class="w-[70%] animate-[zoomin_0.5s_ease-in] text-[2rem] font-normal leading-none text-[#A9A9A9]">
+  <div
+    [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-11' : 'flex-row gap-6'"
+    class="flex items-center justify-between"
+  >
+    <div
+      [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : 'w-[70%]'"
+      class="animate-[zoomin_0.5s_ease-in] text-xl/6 font-normal text-[#A9A9A9] lg:text-[2rem] lg:leading-none"
+    >
       I am passionate about (Web development using ReactJS, NextJS) and (Mobile app development using Flutter, React
       native).
       <br />
@@ -17,17 +23,15 @@
       skills.
     </div>
     <img
-      class="min-h-[26.25rem] w-[22rem] animate-[zoomin_0.5s_ease-in-out] rounded-3xl"
-      [hidden]="isMyImageLoading"
+      class="min-h-[22rem] w-[18rem] animate-[zoomin_0.5s_ease-in-out] rounded-3xl lg:min-h-[26.25rem] lg:w-[22rem]"
+      [hidden]="!isShowImage()"
       src="./assets/images/my-image.jpg"
       alt="My Image"
-      (load)="isMyImageLoading = false"
+      (load)="isMyImageLoading$.next(false)"
     />
-    @if (isMyImageLoading) {
+    @if (!isShowImage()) {
       <p-skeleton
-        styleClass="bg-gray-300 dark:bg-mirage animate-[fadeinright_0.2s_linear] min-h-[26.25rem]"
-        width="22rem"
-        borderRadius="1.5rem"
+        styleClass="bg-gray-300 !w-[18rem] lg:!w-[22rem] !rounded-[1.5rem]  dark:bg-mirage animate-[fadeinright_0.2s_linear] min-h-[22rem] lg:min-h-[26.25rem]"
       ></p-skeleton>
     }
   </div>

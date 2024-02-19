@@ -1,5 +1,5 @@
 <footer
-  [ngClass]="(layoutService.isMobile$ | async) === false ? 'fixed bottom-0 z-[7]' : ''"
+  [ngClass]="(layoutService.isMobile$ | async) === false ? 'fixed bottom-0 z-[7]' : 'flex-col'"
   class="flex h-[var(--header-height)] w-[calc(100%-var(--sidebar-width))] items-center justify-between border-none bg-alabaster/60 text-2xl font-normal backdrop-blur-[0.125rem] transition-colors duration-[1500] dark:bg-[rgba(24,24,29,0.30)]"
 >
   <div class="flex h-full items-center gap-6 border-t border-[rgba(34,49,79,0.10)] pl-8 dark:border-manganese-black">

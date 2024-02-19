@@ -8,11 +8,20 @@ import { FooterComponent } from '../components/footer/footer.component'
 import { OverlayscrollbarsModule } from 'overlayscrollbars-ngx'
 import { DestroyService, LayoutService, ThemeService } from 'src/app/core/services'
 import { takeUntil } from 'rxjs'
+import { ScrollTopModule } from 'primeng/scrolltop'
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, SidebarComponent, HeaderComponent, FooterComponent, OverlayscrollbarsModule],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    SidebarComponent,
+    HeaderComponent,
+    FooterComponent,
+    OverlayscrollbarsModule,
+    ScrollTopModule
+  ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css'],
   providers: [DestroyService]

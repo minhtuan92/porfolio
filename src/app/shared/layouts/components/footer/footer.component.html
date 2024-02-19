@@ -1,7 +1,7 @@
 <footer
-  class="bg-alabaster/60 fixed bottom-0 z-10 flex h-[var(--header-height)] w-[calc(100%-var(--sidebar-width))] items-center justify-between border-y border-[rgba(34,49,79,0.10)] pl-8 text-2xl font-normal backdrop-blur-[0.125rem] dark:border-manganese-black dark:bg-[rgba(24,24,29,0.30)]"
+  class="fixed bottom-0 z-[7] flex h-[var(--header-height)] w-[calc(100%-var(--sidebar-width))] items-center justify-between border-none bg-alabaster/60 text-2xl font-normal backdrop-blur-[0.125rem] transition-colors duration-[1500] dark:bg-[rgba(24,24,29,0.30)]"
 >
-  <div class="flex h-full items-center gap-6">
+  <div class="flex h-full items-center gap-6 border-t border-[rgba(34,49,79,0.10)] pl-8 dark:border-manganese-black">
     <p class="flex h-full items-center justify-center pr-6">find me at:</p>
     <div class="navigation flex h-full items-center">
       <a
@@ -20,8 +20,9 @@
       </a>
     </div>
   </div>
+  <div class="h-full flex-1 border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"></div>
   <div
-    class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] dark:border-manganese-black"
+    class="flex h-full items-center justify-center border-l border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"
   >
     <button
       type="button"
@@ -43,6 +44,12 @@
         class="absolute h-6 w-6 rotate-0 scale-100 stroke-dark-knight stroke-2 transition-all duration-300 dark:-rotate-90 dark:scale-0"
       >
       </svg-icon>
+      <div class="test container absolute flex h-full w-full items-center justify-center">
+        <div
+          [ngClass]="{ 'scale-[1]': darkModeActive }"
+          class="dark-mode relative z-[-1] flex h-[250vh] w-[250vh] flex-[0_0_auto] scale-0 rounded-[50%] bg-dark-knight transition duration-1000 ease-in-out md:h-[250vw] md:w-[250vw]"
+        ></div>
+      </div>
     </button>
     <span
       class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 dark:border-manganese-black"

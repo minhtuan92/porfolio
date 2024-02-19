@@ -22,3 +22,7 @@
     @apply font-vt323 leading-none text-dark-knight dark:text-pastel-placebo;
   }
 }
+
+.p-component {
+  @apply font-vt323;
+}

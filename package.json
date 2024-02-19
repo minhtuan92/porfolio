@@ -24,6 +24,7 @@
     "angular-svg-icon": "^17.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "ngx-clipboard": "^16.0.0",
     "overlayscrollbars": "^2.4.5",
     "overlayscrollbars-ngx": "^0.5.1",
     "prettier-eslint": "^16.1.2",

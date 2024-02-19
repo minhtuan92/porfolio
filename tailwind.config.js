@@ -17,7 +17,9 @@ module.exports = {
         'dark-knight': '#101828',
         'lavender-mauve': '#677796',
         'pastel-placebo': '#E7E7E7',
-        'screen-glow': '#6CE9A6'
+        'screen-glow': '#6CE9A6',
+        anakiwa: '#84CAFF',
+        'lavender-rose': '#FAA7E0'
       },
       keyframes: {
         fadein: {
@@ -83,11 +85,50 @@ module.exports = {
       wordsets: {
         jobs: {
           words: ['_frontend developer', '_backend developer', '_fullstack developer'],
-          delay: 2,
           pauseBetween: 2,
           writeSpeed: 0.2,
           caretWidth: '0.5rem',
           caretSpacing: '1rem'
+        },
+        about: {
+          words: ['_about me'],
+          writeSpeed: 0.2,
+          caretWidth: '0.5rem',
+          caretSpacing: '1rem',
+          repeat: 0,
+          eraseSpeed: 0
+        },
+        skills: {
+          words: ['_my skills'],
+          writeSpeed: 0.2,
+          caretWidth: '0.5rem',
+          caretSpacing: '1rem',
+          repeat: 0,
+          eraseSpeed: 0
+        },
+        resume: {
+          words: ['_my resume'],
+          writeSpeed: 0.2,
+          caretWidth: '0.5rem',
+          caretSpacing: '1rem',
+          repeat: 0,
+          eraseSpeed: 0
+        },
+        projects: {
+          words: ['_my projects'],
+          writeSpeed: 0.2,
+          caretWidth: '0.5rem',
+          caretSpacing: '1rem',
+          repeat: 0,
+          eraseSpeed: 0
+        },
+        contact: {
+          words: ['_get in touch'],
+          writeSpeed: 0.2,
+          caretWidth: '0.5rem',
+          caretSpacing: '1rem',
+          repeat: 0,
+          eraseSpeed: 0
         }
       }
     })

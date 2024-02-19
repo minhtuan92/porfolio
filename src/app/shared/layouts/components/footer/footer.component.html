@@ -10,8 +10,13 @@
         [href]="[socialApp.link]"
         target="_blank"
       >
-        <!-- <svg-icon /> -->
-        {{ socialApp.icon }}
+        <svg-icon
+          [applyClass]="true"
+          viewBox="auto"
+          [src]="'assets/icons/svg/' + socialApp.icon + '.svg'"
+          class="h-6 w-6 fill-lavender-mauve stroke-2 dark:fill-pastel-placebo"
+        >
+        </svg-icon>
       </a>
     </div>
   </div>

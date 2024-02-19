@@ -1,5 +1,6 @@
 <header
-  class="sticky top-0 z-10 flex h-[var(--header-height)] w-[100vw] items-center justify-between border-b border-[rgba(34,49,79,0.10)] text-2xl font-normal backdrop-blur-[0.125rem] transition-colors duration-[1500ms] dark:border-manganese-black dark:bg-[rgba(24,24,29,0.6)]"
+  [ngClass]="(layoutService.isMobile$ | async) ? 'w-[100vw]' : 'w-[calc(100%-var(--sidebar-width))]'"
+  class="fixed top-0 z-10 flex h-[var(--header-height)] items-center justify-between border-b border-[rgba(34,49,79,0.10)] text-2xl font-normal backdrop-blur-[0.125rem] transition-colors duration-[1500ms] dark:border-manganese-black dark:bg-[rgba(24,24,29,0.6)]"
 >
   <div class="flex h-full cursor-default flex-col items-center justify-center px-6 leading-none">
     <p>// Tuan Tran</p>
@@ -31,7 +32,7 @@
       </a>
     </nav>
   } @else {
-    <div class="control-btn flex grow justify-end">
+    <div class="control-btn flex">
       <!-- <app-darkmode-button></app-darkmode-button> -->
       <button
         type="button"
@@ -66,7 +67,7 @@
   [styleClass]="
     '!bg-dark-knight/80 !backdrop-blur-lg ' +
     ((layoutService.screenSizeChanged$ | async)?.includes('Handset')
-      ? 'w-full h-[calc(100%-var(--header-height))]'
+      ? 'w-full h-[calc(100dvh-var(--header-height))]'
       : '')
   "
   (onHide)="isMenuShow = false"

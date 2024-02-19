@@ -23,7 +23,10 @@ module.exports = {
         'mine-shaft': '#383737',
         mirage: '#1D2939',
         gallery: '#EBEBEB',
-        concrete: 'F3F3F3'
+        concrete: '#F3F3F3',
+        'green-haze': '#039855',
+        iron: '#D7D9DD',
+        alabaster: '#F9F9F9'
       },
       boxShadow: {
         xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)'

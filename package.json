@@ -27,7 +27,7 @@
     "overlayscrollbars": "^2.4.5",
     "overlayscrollbars-ngx": "^0.5.1",
     "prettier-eslint": "^16.1.2",
-    "primeng": "17.0.0-beta.1",
+    "primeng": "17.0.0",
     "rxjs": "~7.8.1",
     "tailwind-typewriter": "^1.0.1",
     "tslib": "^2.6.2",

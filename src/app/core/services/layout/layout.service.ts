@@ -17,9 +17,11 @@ export class LayoutService extends EnsureLoadedOnceGuard implements OnDestroy {
     [Breakpoints.TabletLandscape, SCREEN_SIZE.TABLET_LANDSCAPE],
     [Breakpoints.WebLandscape, SCREEN_SIZE.WEB_LANDSCAPE]
   ])
-  screenSizeChanged$ = new Subject<void>()
+  private screenSizeChanged = new BehaviorSubject<string>('')
+  private isMobile = new BehaviorSubject<boolean>(false)
+  readonly isMobile$ = this.isMobile.asObservable()
+  readonly screenSizeChanged$ = this.screenSizeChanged.asObservable()
   currentScreenSize: string
-  isMobile$ = new BehaviorSubject<boolean>(true)
 
   constructor(
     @Optional() @SkipSelf() parent: LayoutService,
@@ -35,13 +37,13 @@ export class LayoutService extends EnsureLoadedOnceGuard implements OnDestroy {
             this.currentScreenSize = this.displayNameMap.get(query) ?? SCREEN_SIZE.UNKNOW
           }
         }
-        this.isMobile$.next(
+        this.isMobile.next(
           !(
             this.currentScreenSize === SCREEN_SIZE.TABLET_LANDSCAPE ||
             this.currentScreenSize === SCREEN_SIZE.WEB_LANDSCAPE
           )
         )
-        this.screenSizeChanged$.next()
+        this.screenSizeChanged.next(this.currentScreenSize)
       })
   }
 

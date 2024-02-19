@@ -1,6 +1,7 @@
-import { Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterLink, RouterLinkActive } from '@angular/router'
+import { LayoutService } from '@core/services'
 
 interface Navigation {
   label?: string
@@ -11,7 +12,8 @@ interface Navigation {
   standalone: true,
   imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
   navigations: Navigation[] = [
@@ -36,4 +38,6 @@ export class HeaderComponent {
       link: 'projects'
     }
   ]
+
+  constructor(public layoutService: LayoutService) {}
 }

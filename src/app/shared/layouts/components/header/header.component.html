@@ -1,29 +1,36 @@
 <header
+  [ngClass]="{ 'w-full': layoutService.isMobile$ | async }"
   class="fixed top-0 z-10 flex h-[var(--header-height)] w-[calc(100%-var(--sidebar-width))] items-center justify-between border-b border-[rgba(34,49,79,0.10)] pl-8 pr-2 text-2xl font-normal backdrop-blur-[0.125rem] transition-colors duration-[1500] dark:border-manganese-black dark:bg-[rgba(24,24,29,0.6)]"
 >
   <div class="flex h-full items-center gap-6">
-    <div class="flex h-full flex-col items-center justify-center leading-none">
+    <div class="flex h-full cursor-default flex-col items-center justify-center leading-none">
       <p>// Tuan Tran</p>
-      <p class="text-green-haze dark:text-screen-glow">fullstack_dev</p>
+      @if ((layoutService.isMobile$ | async) === false) {
+        <p class="text-green-haze dark:text-screen-glow">fullstack_dev</p>
+      }
     </div>
-    <div class="navigation flex h-full items-center">
-      <a
-        class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 last:border-r dark:border-manganese-black"
-        *ngFor="let navigation of navigations; index as i"
-        [routerLink]="[navigation.link]"
-        [routerLinkActiveOptions]="{ exact: true }"
-        routerLinkActive="router-link-active"
-      >
-        {{ navigation.label }}
-      </a>
-    </div>
+    @if ((layoutService.isMobile$ | async) === false) {
+      <div class="navigation flex h-full items-center">
+        <a
+          class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 last:border-r dark:border-manganese-black"
+          *ngFor="let navigation of navigations; index as i"
+          [routerLink]="[navigation.link]"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="router-link-active"
+        >
+          {{ navigation.label }}
+        </a>
+      </div>
+    }
   </div>
-  <a
-    class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 dark:border-manganese-black"
-    [routerLink]="['contact']"
-    [routerLinkActiveOptions]="{ exact: true }"
-    routerLinkActive="router-link-active"
-  >
-    _contact
-  </a>
+  @if ((layoutService.isMobile$ | async) === false) {
+    <a
+      class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 dark:border-manganese-black"
+      [routerLink]="['contact']"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="router-link-active"
+    >
+      _contact
+    </a>
+  }
 </header>

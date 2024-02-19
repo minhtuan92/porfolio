@@ -1,9 +1,11 @@
-<div
-  class="sidebar flex h-[100vh] w-[var(--sidebar-width)] cursor-default flex-col gap-1 border-r border-[rgba(34,49,79,0.10)] px-5 py-4.5 text-xl leading-[1.125rem] text-lavender-mauve transition-colors duration-[1500] dark:border-manganese-black"
->
-  <div class="flex flex-col gap-1.5 overflow-hidden">
-    <span *ngFor="let lineNumber of lineNumbers">
-      {{ lineNumber }}
-    </span>
+@if ((layoutService.isMobile$ | async) === false) {
+  <div
+    class="sidebar flex h-[100vh] w-[var(--sidebar-width)] cursor-default flex-col gap-1 border-r border-[rgba(34,49,79,0.10)] px-5 py-4.5 text-xl leading-[1.125rem] text-lavender-mauve transition-colors duration-[1500] dark:border-manganese-black"
+  >
+    <div class="flex flex-col gap-1.5 overflow-hidden">
+      <span *ngFor="let lineNumber of lineNumbers">
+        {{ lineNumber }}
+      </span>
+    </div>
   </div>
-</div>
+}

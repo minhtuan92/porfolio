@@ -2,7 +2,9 @@ import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { AngularSvgIconModule } from 'angular-svg-icon'
 import { RouterLink } from '@angular/router'
-import { DarkmodeButtonComponent } from '../darkmode-button/darkmode-button.component'
+
+import { DarkmodeButtonComponent } from '@shared/components'
+import { LayoutService } from '@core/services'
 
 interface SocialApp {
   icon: string
@@ -16,7 +18,7 @@ interface SocialApp {
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  constructor() {}
+  constructor(public layoutService: LayoutService) {}
 
   socialApps: SocialApp[] = [
     {

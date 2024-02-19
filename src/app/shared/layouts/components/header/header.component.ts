@@ -2,42 +2,61 @@ import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterLink, RouterLinkActive } from '@angular/router'
 import { LayoutService } from '@core/services'
+import { AngularSvgIconModule } from 'angular-svg-icon'
+import { MenuModule } from 'primeng/menu'
 
-interface Navigation {
-  label?: string
-  link?: string
-}
+import { DarkmodeButtonComponent } from '@shared/components'
+import { MenuItem } from 'primeng/api'
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink, RouterLinkActive, AngularSvgIconModule, DarkmodeButtonComponent, MenuModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  navigations: Navigation[] = [
+  navigations: MenuItem[] = [
     {
+      id: '1',
       label: '_home',
-      link: ''
+      routerLink: '/',
+      routerLinkActiveOptions: '{exact:true}'
     },
     {
+      id: '2',
       label: '_about',
-      link: 'about'
+      routerLink: 'about',
+      routerLinkActiveOptions: '{exact:true}'
     },
     {
+      id: '3',
       label: '_skills',
-      link: 'skills'
+      routerLink: 'skills'
     },
     {
+      id: '4',
       label: '_resume',
-      link: 'resume'
+      routerLink: 'resume'
     },
     {
+      id: '5',
       label: '_projects',
-      link: 'projects'
+      routerLink: 'projects'
+    },
+    {
+      id: '6',
+      label: '_contact',
+      routerLink: 'contact'
     }
   ]
-
+  mainNav = this.navigations.slice(0, -1)
+  contactNav = this.navigations.slice(-1)[0]
+  isMenuShow = false
   constructor(public layoutService: LayoutService) {}
+
+  toggleMenu() {
+    this.isMenuShow = !this.isMenuShow
+  }
 }

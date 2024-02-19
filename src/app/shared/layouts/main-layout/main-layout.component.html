@@ -23,10 +23,17 @@
         overflow: { x: 'hidden' },
         scrollbars: { autoHide: 'leave', autoHideDelay: 100, theme: scrollbarTheme }
       }"
-      class="content z-[8] h-[calc(100%-var(--header-height)*2)] w-full py-24 pl-[calc(11rem-var(--sidebar-width))] pr-44"
+      [ngClass]="
+        (layoutService.isMobile$ | async)
+          ? 'px-4 pt-24'
+          : 'h-[calc(100%-var(--header-height)*2)] py-24 pl-[calc(11rem-var(--sidebar-width))] pr-44'
+      "
+      class="content z-[8] w-full"
     >
       <router-outlet></router-outlet>
     </div>
-    <app-footer />
+    @if ((layoutService.isMobile$ | async) === false) {
+      <app-footer />
+    }
   </div>
 </div>

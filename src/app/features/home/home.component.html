@@ -7,7 +7,7 @@
       <p>&nbsp;{{ '“}' }}</p>
     </div>
   </div>
-  <div class="flex items-center justify-between">
+  <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
     <div class="w-[70%] animate-[zoomin_0.5s_ease-in] text-[2rem] font-normal leading-none text-[#A9A9A9]">
       I am passionate about (Web development using ReactJS, NextJS) and (Mobile app development using Flutter, React
       native).
@@ -31,4 +31,7 @@
       ></p-skeleton>
     }
   </div>
+  @if (layoutService.isMobile$ | async) {
+    <app-footer></app-footer>
+  }
 </div>

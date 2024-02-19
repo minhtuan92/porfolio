@@ -82,10 +82,10 @@
           "options": { "open": true },
           "configurations": {
             "production": {
-              "browserTarget": "myPorfolio:build:production"
+              "buildTarget": "myPorfolio:build:production"
             },
             "development": {
-              "browserTarget": "myPorfolio:build:development"
+              "buildTarget": "myPorfolio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +93,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "myPorfolio:build"
+            "buildTarget": "myPorfolio:build"
           }
         },
         "test": {

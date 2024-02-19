@@ -1,7 +1,7 @@
 # MyPorfolio
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
-- A personal portfolio made using the below techstack:
+- A personal portfolio made using the below tech stack:
   - Angular, html, css, javascript, typescript.
 
 ### Used concepts:

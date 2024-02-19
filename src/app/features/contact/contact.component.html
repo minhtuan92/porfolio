@@ -21,8 +21,8 @@
         const <span class="text-green-haze dark:text-screen-glow">email</span> =
         <span
           pTooltip="Click to copy my email"
-          [showDelay]="300"
-          [hideDelay]="300"
+          [showDelay]="200"
+          [hideDelay]="200"
           tooltipPosition="bottom"
           class="cursor-pointer text-lavender-rose"
           (click)="onClick(email)"
@@ -36,13 +36,27 @@
       <p class="animate-[fadeinleft_0.5s_ease-in] text-lavender-mauve">//my skype</p>
       <p class="animate-[zoomin_0.8s_ease-in] cursor-default text-anakiwa">
         const <span class="text-green-haze dark:text-screen-glow">skype</span> =
-        <span class="cursor-pointer text-lavender-rose" (click)="onClick(skype)" aria-hidden="true">"{{ skype }}"</span
+        <span
+          pTooltip="Click to copy my skype"
+          [showDelay]="200"
+          [hideDelay]="200"
+          tooltipPosition="bottom"
+          class="cursor-pointer text-lavender-rose"
+          (click)="onClick(skype)"
+          aria-hidden="true"
+          >"{{ skype }}"</span
         >;
       </p>
     </div>
     <div class="flex flex-col gap-2">
       <p class="animate-[fadeinleft_0.5s_ease-in] text-lavender-mauve">//my linkedin</p>
-      <p class="animate-[zoomin_0.8s_ease-in] cursor-default text-anakiwa">
+      <p
+        pTooltip="Click to view my linkedIn"
+        [showDelay]="200"
+        [hideDelay]="200"
+        tooltipPosition="bottom"
+        class="animate-[zoomin_0.8s_ease-in] cursor-default text-anakiwa"
+      >
         const <span class="text-green-haze dark:text-screen-glow">linkedin</span> =
         <a class="text-lavender-rose" target="_blank" [href]="linkedIn">"{{ linkedIn }}"</a>;
       </p>

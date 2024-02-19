@@ -7,7 +7,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { provideAnimations } from '@angular/platform-browser/animations'
 
 import { MessageService } from 'primeng/api'
-import { ThemeService } from './core/services'
+import { LayoutService, ThemeService } from './core/services'
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimations(),
     ThemeService,
+    LayoutService,
     MessageService
   ]
 }

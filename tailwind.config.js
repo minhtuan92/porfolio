@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   darkMode: 'class',
   content: ['./src/**/*.{html,ts}'],
@@ -7,7 +9,17 @@ module.exports = {
     fontFamily: {
       vt323: ['VT323', 'monospace', 'sans-serif']
     },
+    screens: {
+      xs: { max: '599.98px' },
+      ...defaultTheme.screens
+    },
     extend: {
+      screens: {
+        sm: { min: '600px', max: '959.98px' },
+        md: { min: '960px', max: '1279.98px' },
+        lg: { min: '1280px', max: '1919.98px' },
+        xl: { min: '1920px' }
+      },
       spacing: {
         4.5: '1.125rem',
         17: '4.25rem'

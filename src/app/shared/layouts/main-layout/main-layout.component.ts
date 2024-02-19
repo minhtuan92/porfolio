@@ -26,10 +26,8 @@ export class MainLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateScrollBarTheme()
-    console.log(this.scrollbarTheme)
     this.themeService.themeChange$.pipe(takeUntil(this.destroyService.destroyed$)).subscribe(() => {
       this.updateScrollBarTheme()
-      console.log(this.themeService.currentTheme)
     })
   }
 

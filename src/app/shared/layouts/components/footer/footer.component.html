@@ -1,1 +1,20 @@
-<p class="sticky bottom-0 m-auto">footer works!</p>
+<footer
+  class="flex h-[var(--header-height)] flex-shrink-0 flex-grow basis-0 items-center justify-between border-y border-manganese-black pl-8 text-[1.625rem]"
+>
+  <div class="flex h-full items-center gap-6">
+    <p class="flex h-full items-center justify-center pr-6">fine me at:</p>
+    <div class="navigation flex h-full items-center">
+      <a
+        class="flex h-full items-center justify-center border-l border-manganese-black px-6 last:border-r"
+        *ngFor="let socialApp of socialApps; index as i"
+        [routerLink]="[socialApp.link]"
+      >
+        <!-- <svg-icon /> -->
+        {{ socialApp.icon }}
+      </a>
+    </div>
+  </div>
+  <span class="flex h-full items-center justify-center border-l border-manganese-black px-6">
+    <p>© 2023 Tuan Tran. Design & Coded with ❤️️</p>
+  </span>
+</footer>

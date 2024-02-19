@@ -1,1 +1,7 @@
-<div class="sidebar flex shrink-0 flex-col items-start justify-between border-r px-6 py-4.5 leading-normal"></div>
+<div
+  class="sidebar sticky flex w-[var(--sidebar-width)] shrink-0 flex-col items-start justify-between border-r border-manganese-black px-6 py-4.5 leading-normal text-lavender-mauve"
+>
+  <span *ngFor="let lineNumber of lineNumbers">
+    {{ lineNumber }}
+  </span>
+</div>

@@ -8,7 +8,8 @@ module.exports = {
     },
     extend: {
       spacing: {
-        4.5: '1.125rem'
+        4.5: '1.125rem',
+        17: '4.25rem'
       },
       colors: {
         'manganese-black': '#22314F',

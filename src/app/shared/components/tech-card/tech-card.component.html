@@ -1,0 +1,17 @@
+<div
+  class="dark:border-mine-shaft dark:bg-mirage bg-concrete border-gallery flex h-[18.75rem] w-[20.625rem] flex-col gap-10 rounded-[1.375rem] border px-6 pb-6 pt-[5.8125rem]"
+>
+  <div class="flex items-center">
+    <svg-icon
+      [applyClass]="true"
+      viewBox="auto"
+      [src]="'assets/images/svg/' + item.image"
+      class="h-[7.125rem] w-[7.125rem] fill-lavender-mauve stroke-2 dark:fill-pastel-placebo"
+    >
+    </svg-icon>
+  </div>
+  <div class="flex items-end justify-between">
+    <span>{{ item.label }}</span>
+    <div>{{ item.label }}</div>
+  </div>
+</div>

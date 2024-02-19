@@ -19,7 +19,11 @@ module.exports = {
         'pastel-placebo': '#E7E7E7',
         'screen-glow': '#6CE9A6',
         anakiwa: '#84CAFF',
-        'lavender-rose': '#FAA7E0'
+        'lavender-rose': '#FAA7E0',
+        'mine-shaft': '#383737',
+        mirage: '#1D2939',
+        gallery: '#EBEBEB',
+        concrete: 'F3F3F3'
       },
       keyframes: {
         fadein: {

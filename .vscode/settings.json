@@ -5,5 +5,13 @@
   "prettier.semi": false,
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
+  },
+  "angular-schematics.schematicsDefaultOptions": {
+    "angular-component": {
+      "skipDisplayBlock": true
+    },
+    "angular-*": {
+      "externalTemplate": true
+    }
   }
 }

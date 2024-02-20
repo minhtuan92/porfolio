@@ -1,8 +1,15 @@
 <footer
-  [ngClass]="(layoutService.isMobile$ | async) === false ? 'fixed bottom-0 z-[7]' : 'flex-col'"
-  class="flex h-[var(--header-height)] w-[calc(100%-var(--sidebar-width))] items-center justify-between border-none bg-alabaster/60 text-2xl font-normal backdrop-blur-[0.125rem] transition-colors duration-[1500] dark:bg-[rgba(24,24,29,0.30)]"
+  [ngClass]="
+    (layoutService.isMobile$ | async)
+      ? 'w-full flex-col gap-10 text-xl/6'
+      : 'fixed bottom-0 z-[7] h-[var(--header-height)] w-[calc(100%-var(--sidebar-width))] text-2xl'
+  "
+  class="flex items-center border-none bg-alabaster/60 font-normal backdrop-blur-[0.125rem] transition-colors duration-[1500] dark:bg-[rgba(24,24,29,0.30)]"
 >
-  <div class="flex h-full items-center gap-6 border-t border-[rgba(34,49,79,0.10)] pl-8 dark:border-manganese-black">
+  <div
+    [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-10' : 'h-full gap-6 pl-8 '"
+    class="flex items-center border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"
+  >
     <p class="flex h-full items-center justify-center pr-6">find me at:</p>
     <nav class="social-nav flex h-full items-center">
       <a
@@ -21,7 +28,9 @@
       </a>
     </nav>
   </div>
-  <div class="h-full flex-1 border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"></div>
+  @if ((layoutService.isMobile$ | async) === false) {
+    <div class="h-full flex-1 border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"></div>
+  }
   <div
     class="flex h-full items-center justify-center border-l border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"
   >
@@ -29,9 +38,11 @@
       <app-darkmode-button></app-darkmode-button>
     }
     <span
+      [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col' : ''"
       class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 dark:border-manganese-black"
     >
-      <p>© 2023 Tuan Tran. Design & Code with ❤️️</p>
+      <p>© 2024 Tuan Tran.&nbsp;</p>
+      <p>Design & Code with ❤️️</p>
     </span>
   </div>
 </footer>

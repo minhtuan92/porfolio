@@ -22,7 +22,7 @@
     --header-height__mobile: 3.75rem;
     @apply font-vt323 leading-none text-dark-knight dark:text-pastel-placebo;
     & .typing-header {
-      @apply inline-flex flex-nowrap text-[3.25rem] font-normal leading-none lg:text-[6.25rem] lg:leading-[7.5rem];
+      @apply inline-flex min-h-[6.5rem] flex-nowrap text-[3.25rem] font-normal leading-none lg:min-h-[6.25rem] lg:text-[6.25rem] lg:leading-[7.5rem];
       & .typing-header__text {
         @apply text-green-haze type-skills dark:text-screen-glow;
       }

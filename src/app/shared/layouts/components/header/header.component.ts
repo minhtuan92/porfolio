@@ -7,20 +7,11 @@ import { MenuModule } from 'primeng/menu'
 
 import { DarkmodeButtonComponent } from '@shared/components'
 import { MenuItem } from 'primeng/api'
-import { TooltipModule } from 'primeng/tooltip'
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    RouterLinkActive,
-    AngularSvgIconModule,
-    DarkmodeButtonComponent,
-    MenuModule,
-    TooltipModule
-  ],
+  imports: [CommonModule, RouterLink, RouterLinkActive, AngularSvgIconModule, DarkmodeButtonComponent, MenuModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -28,10 +19,14 @@ import { TooltipModule } from 'primeng/tooltip'
 export class HeaderComponent {
   navigations: MenuItem[] = [
     {
+      id: '1',
+      label: '_home',
+      routerLink: ''
+    },
+    {
       id: '2',
       label: '_about',
-      routerLink: 'about',
-      routerLinkActiveOptions: '{exact:true}'
+      routerLink: 'about'
     },
     {
       id: '3',

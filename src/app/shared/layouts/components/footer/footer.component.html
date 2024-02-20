@@ -1,19 +1,20 @@
 <footer
   [ngClass]="
     (layoutService.isMobile$ | async)
-      ? 'w-full flex-col gap-10 text-xl/6'
+      ? 'w-full flex-col gap-10 px-6 text-xl/6'
       : 'fixed bottom-0 z-[7] h-[var(--header-height)] w-[calc(100%-var(--sidebar-width))] text-2xl'
   "
-  class="flex items-center border-none bg-alabaster/60 font-normal backdrop-blur-[0.125rem] transition-colors duration-[1500] dark:bg-[rgba(24,24,29,0.30)]"
+  class="flex items-center border-none bg-alabaster/60 font-normal backdrop-blur-[0.125rem] transition-colors duration-1000 dark:bg-[rgba(24,24,29,0.30)]"
 >
   <div
-    [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-10' : 'h-full gap-6 pl-8 '"
-    class="flex items-center border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"
+    [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-10' : 'h-full gap-6 border-t pl-8'"
+    class="flex items-center border-[rgba(34,49,79,0.10)] dark:border-manganese-black"
   >
     <p class="flex h-full items-center justify-center pr-6">find me at:</p>
     <nav class="social-nav flex h-full items-center">
       <a
-        class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 last:border-r dark:border-manganese-black"
+        [ngClass]="(layoutService.isMobile$ | async) ? '' : 'border-l last:border-r'"
+        class="flex h-full items-center justify-center border-[rgba(34,49,79,0.10)] px-6 dark:border-manganese-black"
         *ngFor="let socialApp of socialApps; index as i"
         [href]="[socialApp.link]"
         target="_blank"
@@ -22,7 +23,8 @@
           [applyClass]="true"
           viewBox="auto"
           [src]="'assets/icons/svg/' + socialApp.icon + '.svg'"
-          class="h-6 w-6 fill-lavender-mauve stroke-2 dark:fill-pastel-placebo"
+          [ngClass]="(layoutService.isMobile$ | async) ? 'h-10 w-10' : 'h-6 w-6'"
+          class="fill-lavender-mauve stroke-2 dark:fill-pastel-placebo"
         >
         </svg-icon>
       </a>
@@ -32,14 +34,23 @@
     <div class="h-full flex-1 border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"></div>
   }
   <div
-    class="flex h-full items-center justify-center border-l border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"
+    [ngClass]="
+      (layoutService.isMobile$ | async)
+        ? 'flex-col'
+        : 'border-l border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black'
+    "
+    class="flex h-full items-center justify-center"
   >
     @if ((layoutService.isMobile$ | async) === false) {
       <app-darkmode-button></app-darkmode-button>
     }
     <span
-      [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col' : ''"
-      class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 dark:border-manganese-black"
+      [ngClass]="
+        (layoutService.isMobile$ | async)
+          ? 'flex-col'
+          : 'border-l border-[rgba(34,49,79,0.10)] dark:border-manganese-black'
+      "
+      class="flex h-full items-center justify-center px-6"
     >
       <p>© 2024 Tuan Tran.&nbsp;</p>
       <p>Design & Code with ❤️️</p>

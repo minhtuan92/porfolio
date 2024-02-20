@@ -25,16 +25,20 @@
       }"
       [ngClass]="
         (layoutService.isMobile$ | async)
-          ? 'px-4 pt-14'
+          ? 'h-[calc(100%-var(--header-height))] px-4 pt-14'
           : 'h-[calc(100%-var(--header-height)*2)] px-32 py-20 lg:px-44 lg:py-28'
       "
       class="content z-[8] w-full translate-y-[var(--header-height)] lg:translate-y-0"
     >
       <router-outlet></router-outlet>
       @if (layoutService.isMobile$ | async) {
+        <div class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 dark:border-manganese-black">
+          <app-footer></app-footer>
+        </div>
         <p-scrollTop target="parent" styleClass="bg-manganese-black bottom-20 left-[100%]"></p-scrollTop>
       }
     </div>
+
     @if ((layoutService.isMobile$ | async) === false) {
       <app-footer />
     }

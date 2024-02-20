@@ -2,14 +2,7 @@
   [ngClass]="(layoutService.isMobile$ | async) ? 'w-[100vw]' : 'w-[calc(100%-var(--sidebar-width))]'"
   class="fixed top-0 z-10 flex h-[var(--header-height)] items-center justify-between border-b border-[rgba(34,49,79,0.10)] text-2xl font-normal backdrop-blur-[0.125rem] transition-colors dark:border-manganese-black dark:bg-[rgba(24,24,29,0.6)]"
 >
-  <a
-    pTooltip="Go back to Home"
-    [showDelay]="200"
-    [hideDelay]="200"
-    tooltipPosition="bottom"
-    class="flex h-full flex-col items-center justify-center px-6 leading-none"
-    [routerLink]="['/']"
-  >
+  <a class="flex h-full flex-col items-center justify-center px-6 leading-none" [routerLink]="['/']">
     <p class="text-xl/8 lg:text-2xl/6">// Tuan Tran</p>
     @if ((layoutService.isMobile$ | async) === false) {
       <p class="text-green-haze dark:text-screen-glow">fullstack_dev</p>
@@ -21,10 +14,6 @@
         @for (nav of mainNav; track nav.id) {
           <a
             class="flex h-full items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 text-xl/8 last:border-r dark:border-manganese-black lg:text-2xl/6"
-            [pTooltip]="'Go to ' + (nav.routerLink | titlecase)"
-            [showDelay]="200"
-            [hideDelay]="200"
-            tooltipPosition="bottom"
             [routerLink]="[nav.routerLink]"
             [routerLinkActiveOptions]="{ exact: true }"
             routerLinkActive="router-link-active"
@@ -35,10 +24,6 @@
       </div>
       <a
         class="flex items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 text-xl/8 dark:border-manganese-black lg:text-2xl/6"
-        [pTooltip]="'Go to ' + (contactNav.routerLink | titlecase)"
-        [showDelay]="200"
-        [hideDelay]="200"
-        tooltipPosition="bottom"
         [routerLink]="[contactNav.routerLink]"
         [routerLinkActiveOptions]="{ exact: true }"
         routerLinkActive="router-link-active"

@@ -5,11 +5,12 @@ import { AnimateModule } from 'primeng/animate'
 import { LayoutService } from '@core/services'
 import { FooterComponent } from '@shared/layouts'
 import { BehaviorSubject, debounceTime, take } from 'rxjs'
+import { AngularSvgIconModule } from 'angular-svg-icon'
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, SkeletonModule, AnimateModule, FooterComponent],
+  imports: [CommonModule, SkeletonModule, AnimateModule, FooterComponent, AngularSvgIconModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush

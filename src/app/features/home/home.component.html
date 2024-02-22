@@ -13,14 +13,30 @@
   >
     <div
       [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : 'w-[70%]'"
-      class="animate-[zoomin_0.5s_ease-in] text-xl/6 font-normal text-[#A9A9A9] lg:text-[2rem] lg:leading-none"
+      class="flex animate-[zoomin_0.5s_ease-in] flex-col gap-10 text-xl/6 font-normal text-[#A9A9A9] lg:text-[2rem] lg:leading-none"
     >
-      I am passionate about (Web development using ReactJS, NextJS) and (Mobile app development using Flutter, React
-      native).
-      <br />
-      <br />
-      Learning new things always excites me and I am constantly seeking new challenges to expand my knowledge and
-      skills.
+      <p>
+        I am passionate about (Web development using ReactJS, NextJS) and (Mobile app development using Flutter, React
+        native).
+        <br />
+        <br />
+        Learning new things always excites me and I am constantly seeking new challenges to expand my knowledge and
+        skills.
+      </p>
+      <a
+        href="/assets/files/Tran_Minh_Tuan-CV.pdf"
+        download="Tran_Minh_Tuan-CV.pdf"
+        class="inline-flex w-fit animate-bounce items-center justify-center gap-3 rounded-lg border border-green-haze px-7 py-4 text-green-haze shadow-xs hover:bg-gray-50 dark:border-screen-glow dark:text-screen-glow dark:hover:bg-lavender-mauve/10"
+      >
+        <svg-icon
+          [applyClass]="true"
+          viewBox="auto"
+          [src]="'assets/icons/svg/download-02.svg'"
+          class="h-6 w-6 fill-lavender-mauve stroke-green-haze stroke-2 dark:fill-pastel-placebo dark:stroke-screen-glow"
+        >
+        </svg-icon>
+        Download my CV
+      </a>
     </div>
     <img
       class="min-h-[22rem] w-[18rem] animate-[zoomin_0.5s_ease-in-out] rounded-3xl lg:min-h-[26.25rem] lg:w-[22rem]"

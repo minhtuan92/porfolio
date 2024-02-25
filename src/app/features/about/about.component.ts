@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { LayoutService } from '@core/services'
 
 @Component({
   selector: 'app-about',
@@ -9,5 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-
+  constructor(public layoutService: LayoutService) {}
 }

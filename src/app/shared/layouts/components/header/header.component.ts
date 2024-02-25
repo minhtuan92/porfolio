@@ -21,7 +21,8 @@ export class HeaderComponent {
     {
       id: '1',
       label: '_home',
-      routerLink: ''
+      routerLink: '/',
+      routerLinkActiveOptions: { exact: true }
     },
     {
       id: '2',

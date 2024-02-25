@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { TechCardComponent } from 'src/app/shared/components'
 import { TechCardItem } from '@shared/models'
+import { LayoutService } from '@core/services'
 
 @Component({
   selector: 'app-skills',
@@ -13,7 +14,7 @@ import { TechCardItem } from '@shared/models'
 export class SkillsComponent implements OnInit {
   frameworkItems: TechCardItem[]
 
-  constructor() {}
+  constructor(public layoutService: LayoutService) {}
 
   ngOnInit(): void {
     this.frameworkItems = [

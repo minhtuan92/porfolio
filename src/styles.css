@@ -21,10 +21,22 @@
     --header-height: 3.75rem;
     --header-height__mobile: 3.75rem;
     @apply font-vt323 leading-none text-dark-knight dark:text-pastel-placebo;
+
+    header {
+      @apply text-xl/8 font-normal lg:text-2xl;
+    }
+
+    .content {
+      @apply text-xl/6 font-normal lg:text-[2rem];
+      &__header {
+        @apply text-2xl/none lg:text-[2rem];
+      }
+    }
+
     & .typing-header {
       @apply inline-flex min-h-[6.5rem] w-full flex-nowrap text-[3.25rem] font-normal leading-none lg:min-h-[6.25rem] lg:w-auto lg:text-[6.25rem] lg:leading-[7.5rem];
       & .typing-header__text {
-        @apply text-green-haze type-skills dark:text-screen-glow;
+        @apply text-green-haze dark:text-screen-glow;
       }
     }
 

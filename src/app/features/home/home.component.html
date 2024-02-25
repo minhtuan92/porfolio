@@ -38,17 +38,19 @@
         Download my CV
       </a>
     </div>
-    <img
-      class="min-h-[22rem] w-[18rem] animate-[zoomin_0.5s_ease-in-out] rounded-3xl lg:min-h-[26.25rem] lg:w-[22rem]"
-      [hidden]="!isShowImage()"
-      src="./assets/images/my-image.jpg"
-      alt="My Image"
-      (load)="isMyImageLoading$.next(false)"
-    />
-    @if (!isShowImage()) {
-      <p-skeleton
-        styleClass="bg-gray-300 !w-[18rem] lg:!w-[22rem] !rounded-[1.5rem]  dark:bg-mirage animate-[fadeinright_0.2s_linear] min-h-[22rem] lg:min-h-[26.25rem]"
-      ></p-skeleton>
-    }
+    <div class="flex w-full justify-center lg:w-1/2">
+      <img
+        class="max-w-full animate-[zoomin_0.5s_ease-in-out] rounded-3xl lg:min-h-[26.25rem] lg:w-[22rem]"
+        [hidden]="!isShowImage()"
+        src="./assets/images/my-image.jpg"
+        alt="My Image"
+        (load)="isMyImageLoading$.next(false)"
+      />
+      @if (!isShowImage()) {
+        <p-skeleton
+          styleClass="bg-gray-300 w-full lg:!w-[22rem] !rounded-[1.5rem]  dark:bg-mirage animate-[fadeinright_0.2s_linear] min-h-[22rem] lg:min-h-[26.25rem]"
+        ></p-skeleton>
+      }
+    </div>
   </div>
 </div>

@@ -3,19 +3,26 @@
     <span class="above-typing-header_text">//Programming languages I have learned</span>
     <div class="typing-header">
       <p>{{ '{“' }}&nbsp;</p>
-      <p class="typing-header__text"></p>
+      <p class="typing-header__text type-skills"></p>
       <p>&nbsp;{{ '“}' }}</p>
     </div>
   </div>
   @defer {
     <div class="flex flex-col items-start gap-20">
-      <div class="item-start flex flex-col gap-8">
+      <div class="item-start flex flex-col gap-8" [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : ''">
         <span class="text-lavender-mauve">//Frontend</span>
-        <div class="flex flex-wrap content-start items-start gap-[3.75rem]">
+        <div
+          [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col' : 'flex-wrap'"
+          class="flex content-start items-start gap-[3.75rem]"
+        >
           @for (frameworkItem of frameworkItems; track frameworkItem.id) {
             <app-tech-card
+              [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : ''"
               [item]="frameworkItem"
-              styleClass="animate-[zoomin_0.5s_ease-in] h-[18.75rem] w-[20.625rem]"
+              [styleClass]="
+                'animate-[zoomin_0.5s_ease-in] ' +
+                ((layoutService.isMobile$ | async) ? 'w-full h-[18.75rem]' : 'h-[18.75rem] w-[20.625rem]')
+              "
             ></app-tech-card>
           }
         </div>

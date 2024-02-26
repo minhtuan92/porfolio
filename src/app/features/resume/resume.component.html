@@ -1,16 +1,16 @@
-<div class="flex flex-col items-start gap-8 text-[2rem] font-normal leading-none">
+<div class="flex flex-col items-start gap-11 lg:gap-8">
   <div class="flex flex-col gap-7">
-    <div class="inline-flex animate-[fadeinleft_0.5s_ease-in] flex-nowrap text-[6.5rem] font-normal leading-[7.5rem]">
+    <div class="inline-flex animate-[fadeinleft_0.5s_ease-in] flex-nowrap">
       <div class="typing-header">
         <p>{{ '{“' }}&nbsp;</p>
-        <p class="text-green-haze type-resume dark:text-screen-glow"></p>
+        <p class="typing-header__text type-resume"></p>
         <p>&nbsp;{{ '“}' }}</p>
       </div>
     </div>
     <a
       href="/assets/files/Tran_Minh_Tuan-CV.pdf"
       download="Tran_Minh_Tuan-CV.pdf"
-      class="inline-flex w-fit animate-bounce items-center justify-center gap-3 rounded-lg border border-green-haze px-7 py-4 text-green-haze shadow-xs hover:bg-gray-50 dark:border-screen-glow dark:text-screen-glow dark:hover:bg-lavender-mauve/10"
+      class="inline-flex w-fit animate-bounce items-center justify-center gap-3 rounded-lg border border-green-haze px-4.5 py-2.5 text-green-haze shadow-xs hover:bg-gray-50 dark:border-screen-glow dark:text-screen-glow dark:hover:bg-lavender-mauve/10 lg:px-7 lg:py-4"
     >
       <svg-icon
         [applyClass]="true"
@@ -22,28 +22,31 @@
       Download my CV
     </a>
   </div>
-  <div class="flex flex-1 animate-[fadeinleft_0.5s_ease-in] gap-14">
-    <div class="flex flex-col gap-5">
+  <div
+    [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-11' : 'flex-row justify-between gap-60'"
+    class="flex w-full animate-[fadeinleft_0.5s_ease-in]"
+  >
+    <div class="flex flex-col gap-2 lg:gap-5">
       <span class="text-lavender-mauve">//experience</span>
-      <div class="flex flex-col gap-12">
-        <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 lg:gap-16">
+        <div class="flex flex-col gap-2 lg:gap-4">
           <p class="text-green-haze dark:text-screen-glow">_2000-2023</p>
           <p>I am able to handle multiple tasks on a daily basis.</p>
         </div>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2 lg:gap-4">
           <p class="text-green-haze dark:text-screen-glow">_2000-2023</p>
           <p>I am able to handle multiple tasks on a daily basis.</p>
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col gap-2 lg:gap-5">
       <span class="text-lavender-mauve">//education</span>
-      <div class="flex flex-col gap-12">
-        <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 lg:gap-16">
+        <div class="flex flex-col gap-2 lg:gap-4">
           <p class="text-green-haze dark:text-screen-glow">_2000-2023</p>
           <p>I am able to handle multiple tasks on a daily basis.</p>
         </div>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2 lg:gap-4">
           <p class="text-green-haze dark:text-screen-glow">_2000-2023</p>
           <p>I am able to handle multiple tasks on a daily basis.</p>
         </div>

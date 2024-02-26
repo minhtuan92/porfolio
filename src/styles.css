@@ -27,10 +27,7 @@
     }
 
     .content {
-      @apply text-xl/6 font-normal lg:text-[2rem];
-      &__header {
-        @apply text-2xl/none lg:text-[2rem];
-      }
+      @apply text-xl/6 font-normal lg:text-[1.625rem] lg:leading-7;
     }
 
     & .typing-header {

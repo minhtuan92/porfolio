@@ -9,6 +9,7 @@ import { OverlayscrollbarsModule } from 'overlayscrollbars-ngx'
 import { DestroyService, LayoutService, ThemeService } from 'src/app/core/services'
 import { takeUntil } from 'rxjs'
 import { ScrollTopModule } from 'primeng/scrolltop'
+import { AngularSvgIconModule } from 'angular-svg-icon'
 
 @Component({
   selector: 'app-main-layout',
@@ -20,7 +21,8 @@ import { ScrollTopModule } from 'primeng/scrolltop'
     HeaderComponent,
     FooterComponent,
     OverlayscrollbarsModule,
-    ScrollTopModule
+    ScrollTopModule,
+    AngularSvgIconModule
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css'],

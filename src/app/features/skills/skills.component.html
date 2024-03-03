@@ -1,5 +1,5 @@
 <div class="flex flex-col items-start gap-8">
-  <div class="flex animate-[fadeinleft_0.5s_ease-in] flex-col items-start gap-7">
+  <div class="flex w-full animate-[fadeinleft_0.5s_ease-in] flex-col items-start gap-7">
     <span class="above-typing-header_text">//Programming languages I have learned</span>
     <div class="typing-header">
       <p>{{ '{“' }}&nbsp;</p>
@@ -7,48 +7,26 @@
       <p>&nbsp;{{ '“}' }}</p>
     </div>
   </div>
-  @defer {
-    <div class="flex flex-col items-start gap-20">
-      <div class="item-start flex flex-col gap-8" [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : ''">
-        <span class="text-lavender-mauve">//Frontend</span>
+  <div class="flex w-full flex-col items-start gap-11 lg:gap-20">
+    @for (skill of skills; track $index) {
+      <div class="frontend-items item-start flex w-full flex-col gap-8">
+        <span class="text-lavender-mauve">//{{ skill.skillName }}</span>
         <div
           [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col' : 'flex-wrap'"
-          class="flex content-start items-start gap-[3.75rem]"
+          class="flex content-start items-start gap-3.5 lg:gap-[3.75rem]"
         >
-          @for (frameworkItem of frameworkItems; track frameworkItem.id) {
+          @for (skillItem of skill.skillItems; track skillItem.id) {
             <app-tech-card
               [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : ''"
-              [item]="frameworkItem"
+              [item]="skillItem"
               [styleClass]="
                 'animate-[zoomin_0.5s_ease-in] ' +
-                ((layoutService.isMobile$ | async) ? 'w-full h-[18.75rem]' : 'h-[18.75rem] w-[20.625rem]')
+                ((layoutService.isMobile$ | async) ? 'w-full' : 'h-[18.75rem] w-[20.625rem]')
               "
             ></app-tech-card>
           }
         </div>
       </div>
-      <div class="item-start flex flex-col gap-8">
-        <span class="text-lavender-mauve">//Backend</span>
-        <div class="flex flex-wrap content-start items-start gap-[3.75rem]">
-          @for (frameworkItem of frameworkItems; track frameworkItem.id) {
-            <app-tech-card
-              [item]="frameworkItem"
-              styleClass="animate-[zoomin_0.5s_ease-in] h-[18.75rem] w-[20.625rem]"
-            ></app-tech-card>
-          }
-        </div>
-      </div>
-      <div class="item-start flex flex-col gap-8">
-        <span class="text-lavender-mauve">//Tools</span>
-        <div class="flex flex-wrap content-start items-start gap-[3.75rem]">
-          @for (frameworkItem of frameworkItems; track frameworkItem.id) {
-            <app-tech-card
-              [item]="frameworkItem"
-              styleClass="animate-[zoomin_0.5s_ease-in] h-[18.75rem] w-[20.625rem]"
-            ></app-tech-card>
-          }
-        </div>
-      </div>
-    </div>
-  }
+    }
+  </div>
 </div>

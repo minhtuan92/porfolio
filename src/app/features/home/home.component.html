@@ -13,7 +13,7 @@
   >
     <div
       [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : 'w-[70%]'"
-      class="flex animate-[zoomin_0.5s_ease-in] flex-col gap-10 text-[#A9A9A9]"
+      class="flex animate-[zoomin_0.5s_ease-in] flex-col gap-10"
     >
       <p>
         I am passionate about (Web development using ReactJS, NextJS) and (Mobile app development using Flutter, React
@@ -48,7 +48,7 @@
       />
       @if (!isShowImage()) {
         <p-skeleton
-          styleClass="bg-gray-300 w-full lg:!w-[22rem] !rounded-[1.5rem]  dark:bg-mirage animate-[fadeinright_0.2s_linear] min-h-[22rem] lg:min-h-[26.25rem]"
+          styleClass="bg-gray-300 !w-[calc(100vw-2rem)] md:!w-[calc(100vw-14rem)] !h-[18rem] sm:!h-[22rem] md:!h-[26rem] !rounded-[1.5rem] dark:bg-mirage animate-[fadeinright_0.2s_linear] lg:min-h-[26.25rem] lg:!w-[22rem]"
         ></p-skeleton>
       }
     </div>

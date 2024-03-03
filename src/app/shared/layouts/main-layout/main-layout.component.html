@@ -1,5 +1,5 @@
 <div
-  class="z-[10] flex h-[100dvh] flex-row overflow-hidden bg-alabaster/60 backdrop-blur-[0.125rem] transition duration-1000 dark:bg-dark-knight"
+  class="z-[10] flex h-dvh flex-row overflow-hidden bg-alabaster/60 backdrop-blur-[0.125rem] transition duration-1000 dark:bg-dark-knight"
 >
   <div class="background-gradient absolute left-0 top-0 h-[37.5rem] w-full overflow-hidden">
     <div
@@ -15,7 +15,10 @@
   <div class="z-10">
     <app-sidebar />
   </div>
-  <div class="flex h-full flex-col lg:flex-1 lg:justify-between">
+  <div
+    [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : ''"
+    class="flex h-full flex-col lg:flex-1 lg:justify-between"
+  >
     <app-header />
     <div
       overlay-scrollbars
@@ -25,14 +28,16 @@
       }"
       [ngClass]="
         (layoutService.isMobile$ | async)
-          ? 'h-[calc(100%-var(--header-height))] px-4 pt-14'
+          ? 'h-[calc(100%-var(--header-height))] px-4 pt-14 md:px-28 md:pt-20'
           : 'h-[calc(100%-var(--header-height)*2)] px-32 py-20 lg:px-44 lg:py-28'
       "
       class="content z-[8] w-full translate-y-[var(--header-height)] lg:translate-y-0"
     >
       <router-outlet></router-outlet>
       @if (layoutService.isMobile$ | async) {
-        <div class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 dark:border-manganese-black">
+        <div
+          class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 dark:border-manganese-black md:-mx-28"
+        >
           <app-footer></app-footer>
         </div>
         <p-scrollTop target="parent" styleClass="bg-manganese-black bottom-20 left-[100%]"></p-scrollTop>

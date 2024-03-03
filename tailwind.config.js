@@ -22,7 +22,8 @@ module.exports = {
       },
       spacing: {
         4.5: '1.125rem',
-        17: '4.25rem'
+        17: '4.25rem',
+        22: '5.5rem'
       },
       colors: {
         'manganese-black': '#22314F',

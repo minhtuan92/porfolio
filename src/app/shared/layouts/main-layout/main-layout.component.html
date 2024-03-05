@@ -33,15 +33,19 @@
       "
       class="content z-[8] w-full translate-y-[var(--header-height)] lg:translate-y-0"
     >
-      <router-outlet></router-outlet>
-      @if (layoutService.isMobile$ | async) {
-        <div
-          class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 dark:border-manganese-black md:-mx-28"
-        >
-          <app-footer></app-footer>
+      <div class="flex h-full flex-col justify-between">
+        <div>
+          <router-outlet></router-outlet>
         </div>
-        <p-scrollTop target="parent" styleClass="bg-manganese-black bottom-20 left-[100%]"></p-scrollTop>
-      }
+        @if (layoutService.isMobile$ | async) {
+          <div
+            class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 dark:border-manganese-black md:-mx-28"
+          >
+            <app-footer></app-footer>
+          </div>
+        }
+      </div>
+      <p-scrollTop target="parent" styleClass="fixed bg-manganese-black"></p-scrollTop>
     </div>
 
     @if ((layoutService.isMobile$ | async) === false) {

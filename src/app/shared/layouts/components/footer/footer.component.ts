@@ -23,15 +23,15 @@ export class FooterComponent {
   socialApps: SocialApp[] = [
     {
       icon: 'linkedIn',
-      link: 'https://linkedIn.com'
+      link: 'https://www.linkedin.com/in/minhtuan92vt/'
     },
     {
       icon: 'facebook',
-      link: 'https://facebook.com'
+      link: 'https://www.facebook.com/lupin.arsene.9'
     },
     {
       icon: 'github',
-      link: 'https://github.com'
+      link: 'https://github.com/minhtuan92'
     }
   ]
 }

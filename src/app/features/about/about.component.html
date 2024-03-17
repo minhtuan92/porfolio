@@ -1,4 +1,4 @@
-<div class="flex flex-col items-start gap-8 overflow-y-auto overflow-x-hidden">
+<div class="flex flex-col items-start gap-8 overflow-y-auto overflow-x-hidden lg:pb-8">
   <div class="flex animate-[fadeinleft_0.5s_ease-in] flex-nowrap">
     <div class="typing-header">
       <p>{{ '{“' }}&nbsp;</p>
@@ -6,52 +6,102 @@
       <p>&nbsp;{{ '“}' }}</p>
     </div>
   </div>
-  <div [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col' : ''" class="flex flex-1 gap-14">
-    <div class="flex animate-[fadeinleft_0.5s_ease-in] flex-col gap-12">
-      <div class="flex flex-col gap-5">
+  <div class="flex flex-1 flex-col gap-7 lg:gap-14">
+    <div class="flex animate-[fadeinleft_0.5s_ease-in] flex-col gap-6 lg:gap-12">
+      <div class="flex flex-col gap-2 lg:gap-5">
         <span class="text-lavender-mauve">//who I am</span>
         <p>
-          I'm Tuan Tran a full stack developer based in Sai Gon, Viet Nam,
-          <img src="assets/images/png/vietnam.png" alt="flag" class="inline-block h-8 w-8" />.
+          I'm Tuan Tran a front-end developer based in Ho Chi Minh, Viet Nam,
+          <img src="assets/images/png/vietnam.png" alt="flag" class="inline-block h-8 w-8" /> .
         </p>
       </div>
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-col gap-2 lg:gap-5">
         <span class="text-lavender-mauve">//what I do</span>
-        <p>
-          I have 6+ years of experience in web development, with a strong background in both front-end and back-end
-          technologies.
-        </p>
-        <p>
-          I am passionate about (Web development using ReactJS, NextJS) and (Mobile app development using Flutter, React
-          native).
-        </p>
-        <p>
-          Learning new things always excites me and I am constantly seeking new challenges to expand my knowledge and
-          skills technologies.
-        </p>
+        <div class="flex flex-col gap-2 lg:gap-3">
+          <p>
+            I have 4+ years of experience in web development, with a strong background in both front-end and back-end
+            technologies.
+          </p>
+          <p>I am passionate about Web development using Angular and Back-end development using .Net.</p>
+          <p>
+            Learning new things always excites me and I am constantly seeking new challenges to expand my knowledge and
+            skills technologies.
+          </p>
+        </div>
       </div>
     </div>
     <div class="flex animate-[fadeinright_0.5s_ease-in] flex-col gap-5">
       <div class="flex flex-col text-lavender-mauve">//what drives my work</div>
-      <div class="flex flex-col gap-16">
-        <div class="flex gap-5">
-          <div class="flex flex-col gap-4">
-            <p class="text-green-haze dark:text-screen-glow">_able</p>
-            <p>I am able to handle multiple tasks on a daily basis.</p>
-          </div>
-          <div class="flex flex-col gap-4">
-            <p class="text-green-haze dark:text-screen-glow">_innovative</p>
-            <p>I am able to handle multiple tasks on a daily basis.</p>
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-2 lg:gap-5">
+          <p class="text-green-haze dark:text-screen-glow">_able</p>
+          <div class="flex flex-col gap-2 lg:gap-3">
+            <p>
+              My strength lies in effectively managing multiple tasks and thriving under pressure. I excel at
+              prioritizing responsibilities, ensuring timely completion without compromising quality. In high-pressure
+              situations, I harness adrenaline to boost productivity and problem-solving.
+            </p>
+            <p>
+              Additionally, my passion for self-learning drives me to continuously explore system architecture, where I
+              am fascinated by the intricacies of technology and strive to stay abreast of advancements.
+            </p>
+            <p>
+              Overall, my ability to manage tasks, thrive under pressure, and my passion for self-improvement and system
+              architecture position me as a valuable asset in any professional environment.
+            </p>
           </div>
         </div>
-        <div class="flex gap-5">
-          <div class="flex flex-col gap-4">
-            <p class="text-green-haze dark:text-screen-glow">_team work</p>
-            <p>I am able to handle multiple tasks on a daily basis.</p>
+        <div class="flex flex-col gap-2 lg:gap-5">
+          <p class="text-green-haze dark:text-screen-glow">_innovative</p>
+          <div class="flex flex-col gap-2 lg:gap-3">
+            <p>
+              I am consistently innovative in my approach to work, always seeking out new ideas and exploring different
+              avenues to enhance productivity. My relentless pursuit of excellence drives me to continuously seek the
+              best methods for handling tasks effectively.
+            </p>
+            <p>
+              I am proactive in researching and implementing new strategies, constantly striving to optimize processes
+              and achieve optimal results.
+            </p>
+            <p>
+              This commitment to innovation and continuous improvement ensures that I remain adaptable and capable of
+              meeting the evolving demands of any project or task.
+            </p>
           </div>
-          <div class="flex flex-col gap-4">
-            <p class="text-green-haze dark:text-screen-glow">_flexible</p>
-            <p>I am able to handle multiple tasks on a daily basis.</p>
+        </div>
+        <div class="flex flex-col gap-2 lg:gap-5">
+          <p class="text-green-haze dark:text-screen-glow">_team work</p>
+          <div class="flex flex-col gap-2 lg:gap-3">
+            <p>
+              Teamwork is fundamental to my professional approach. I prioritize open communication, valuing diverse
+              perspectives and fostering an environment where every team member feels empowered to contribute.
+            </p>
+            <p>
+              I build strong relationships based on trust and reliability, ensuring accountability and promoting a
+              positive team dynamic.
+            </p>
+            <p>
+              By collaborating effectively, I believe teams can achieve greater success and overcome challenges with
+              unity and mutual support.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 lg:gap-5">
+          <p class="text-green-haze dark:text-screen-glow">_flexible</p>
+          <div class="flex flex-col gap-2 lg:gap-3">
+            <p>
+              I approach each task or project with an open mind, ready to pivot strategies or adjust priorities as
+              needed. This adaptability allows me to navigate unexpected obstacles with ease and find creative solutions
+              to complex problems.
+            </p>
+            <p>
+              Moreover, I am receptive to feedback and willing to incorporate new ideas or perspectives into my
+              approach.
+            </p>
+            <p>
+              By remaining flexible in my thinking and actions, I am better equipped to thrive in dynamic environments
+              and contribute effectively to the success of any endeavor.
+            </p>
           </div>
         </div>
       </div>

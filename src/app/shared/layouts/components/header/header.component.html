@@ -1,6 +1,6 @@
 <header
   [ngClass]="(layoutService.isMobile$ | async) ? 'w-[100vw] md:pl-24 md:pr-10' : 'w-[calc(100%-var(--sidebar-width))]'"
-  class="fixed top-0 z-10 flex h-[var(--header-height)] items-center justify-between border-b border-[rgba(34,49,79,0.10)] backdrop-blur-[0.125rem] transition-colors lg:px-0 dark:border-manganese-black dark:bg-[rgba(24,24,29,0.6)]"
+  class="fixed top-0 z-10 flex h-[var(--header-height)] items-center justify-between border-b border-[rgba(34,49,79,0.10)] backdrop-blur-[0.125rem] transition-colors dark:border-manganese-black dark:bg-[rgba(24,24,29,0.6)] lg:px-0"
 >
   <a
     class="flex h-full flex-col items-center justify-center px-4 leading-none lg:px-6"

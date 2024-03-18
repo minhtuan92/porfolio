@@ -27,10 +27,10 @@ export class SkillsComponent implements OnInit {
   backend: Skill
   versionControl: Skill
   packageControl: Skill
+  server: Skill
   os: Skill
-  testing: Skill
   tools: Skill
-
+  others: Skill
   constructor(public layoutService: LayoutService) {}
 
   ngOnInit(): void {
@@ -57,30 +57,36 @@ export class SkillsComponent implements OnInit {
         },
         {
           id: 4,
+          label: SkillName.CSS,
+          image: 'assets/images/svg/css.svg',
+          type: SkillType.CSS
+        },
+        {
+          id: 5,
           label: SkillName.TAILWINDCSS,
           image: 'assets/images/svg/TailwindCSS.svg',
           type: SkillType.CSS
         },
         {
-          id: 5,
+          id: 6,
           label: SkillName.POSTCSS,
           image: 'assets/images/svg/postcss.svg',
           type: SkillType.CSS
         },
         {
-          id: 6,
+          id: 7,
           label: SkillName.SASS,
           image: 'assets/images/svg/sass.svg',
           type: SkillType.CSS
         },
         {
-          id: 7,
+          id: 8,
           label: SkillName.BOOTSTRAP,
           image: 'assets/images/svg/bootstrap.svg',
           type: SkillType.CSS
         },
         {
-          id: 8,
+          id: 9,
           label: SkillName.MATERIALUI,
           image: 'assets/images/svg/material-ui.svg',
           type: SkillType.CSS
@@ -150,6 +156,18 @@ export class SkillsComponent implements OnInit {
           label: SkillName.MONGODB,
           image: 'assets/images/svg/mongodb.svg',
           type: SkillType.DATABASE
+        },
+        {
+          id: 11,
+          label: SkillName.KAFKA,
+          image: 'assets/images/svg/kafka.svg',
+          type: SkillType.TOOLS
+        },
+        {
+          id: 12,
+          label: SkillName.REDIS,
+          image: 'assets/images/svg/redis.svg',
+          type: SkillType.TOOLS
         }
       ]
     }
@@ -177,39 +195,285 @@ export class SkillsComponent implements OnInit {
         },
         {
           id: 4,
+          label: SkillName.CSS,
+          image: 'assets/images/svg/css.svg',
+          type: SkillType.CSS
+        },
+        {
+          id: 5,
           label: SkillName.TAILWINDCSS,
           image: 'assets/images/svg/TailwindCSS.svg',
           type: SkillType.CSS
         },
         {
-          id: 5,
+          id: 6,
           label: SkillName.POSTCSS,
           image: 'assets/images/svg/postcss.svg',
           type: SkillType.CSS
         },
         {
-          id: 6,
+          id: 7,
           label: SkillName.SASS,
           image: 'assets/images/svg/sass.svg',
           type: SkillType.CSS
         },
         {
-          id: 7,
+          id: 8,
           label: SkillName.BOOTSTRAP,
           image: 'assets/images/svg/bootstrap.svg',
           type: SkillType.CSS
         },
         {
-          id: 8,
+          id: 9,
           label: SkillName.MATERIALUI,
           image: 'assets/images/svg/material-ui.svg',
           type: SkillType.CSS
         },
         {
-          id: 9,
+          id: 10,
           label: SkillName.REACTJS,
-          image: 'assets/images/svg/material-ui.svg',
-          type: SkillType.CSS
+          image: 'assets/images/svg/reactjs.svg',
+          type: SkillType.FRAMEWORK
+        },
+        {
+          id: 11,
+          label: SkillName.JAVASCRIPT,
+          image: 'assets/images/svg/js.svg',
+          type: SkillType.LANGUAGE
+        },
+        {
+          id: 12,
+          label: SkillName.NX,
+          image: 'assets/images/svg/nx.svg',
+          type: SkillType.LIBRARY
+        },
+        {
+          id: 13,
+          label: SkillName.STRAPI,
+          image: 'assets/images/svg/strapi.svg',
+          type: SkillType.LIBRARY
+        },
+        {
+          id: 14,
+          label: SkillName.PRETTIER,
+          image: 'assets/images/svg/prettier.svg',
+          type: SkillType.LIBRARY
+        },
+        {
+          id: 15,
+          label: SkillName.ESLINT,
+          image: 'assets/images/svg/eslint.svg',
+          type: SkillType.LIBRARY
+        },
+        {
+          id: 16,
+          label: SkillName.HTML,
+          image: 'assets/images/svg/html.svg',
+          type: SkillType.LANGUAGE
+        },
+        {
+          id: 17,
+          label: SkillName.FIREBASE,
+          image: 'assets/images/svg/firebase.svg',
+          type: SkillType.LIBRARY
+        },
+        {
+          id: 18,
+          label: SkillName.CYPRESS,
+          image: 'assets/images/svg/cypress.svg',
+          type: SkillType.TESTING
+        },
+        {
+          id: 19,
+          label: SkillName.JASMINE,
+          image: 'assets/images/svg/jasmine.svg',
+          type: SkillType.TESTING
+        },
+        {
+          id: 20,
+          label: SkillName.WEBPACK,
+          image: 'assets/images/svg/webpack.svg',
+          type: SkillType.LIBRARY
+        }
+      ]
+    }
+
+    this.backend = {
+      skillName: 'back-end 📡',
+      skillItems: [
+        {
+          id: 1,
+          label: SkillName.NODEJS,
+          image: 'assets/images/svg/nodejs.svg',
+          type: SkillType.FRAMEWORK
+        }
+      ]
+    }
+
+    this.versionControl = {
+      skillName: 'version control ✨',
+      skillItems: [
+        {
+          id: 1,
+          label: SkillName.GIT,
+          image: 'assets/images/svg/git.svg',
+          type: SkillType.VERSION_CONTROL
+        },
+        {
+          id: 2,
+          label: SkillName.GITHUB,
+          image: 'assets/images/svg/github-tech.svg',
+          type: SkillType.VERSION_CONTROL
+        },
+        {
+          id: 3,
+          label: SkillName.GITLAB,
+          image: 'assets/images/svg/gitlab.svg',
+          type: SkillType.VERSION_CONTROL
+        },
+        {
+          id: 4,
+          label: SkillName.BITBUCKET,
+          image: 'assets/images/svg/bitbucket.svg',
+          type: SkillType.VERSION_CONTROL
+        }
+      ]
+    }
+
+    this.packageControl = {
+      skillName: 'package control 🛒',
+      skillItems: [
+        {
+          id: 1,
+          label: SkillName.NPM,
+          image: 'assets/images/svg/npm.svg',
+          type: SkillType.PACKAGE_CONTROL
+        },
+        {
+          id: 2,
+          label: SkillName.YARN,
+          image: 'assets/images/svg/yarn.svg',
+          type: SkillType.PACKAGE_CONTROL
+        },
+        {
+          id: 3,
+          label: SkillName.PNPM,
+          image: 'assets/images/svg/pnpm.svg',
+          type: SkillType.PACKAGE_CONTROL
+        },
+        {
+          id: 4,
+          label: SkillName.PYPI,
+          image: 'assets/images/svg/pypi.svg',
+          type: SkillType.PACKAGE_CONTROL
+        }
+      ]
+    }
+
+    this.server = {
+      skillName: 'server 🖥',
+      skillItems: [
+        {
+          id: 1,
+          label: SkillName.APACHE,
+          image: 'assets/images/svg/apache.svg',
+          type: SkillType.SERVER
+        },
+        {
+          id: 2,
+          label: SkillName.NGINX,
+          image: 'assets/images/svg/nginx.svg',
+          type: SkillType.SERVER
+        },
+        {
+          id: 3,
+          label: SkillName.TOMCAT,
+          image: 'assets/images/svg/tomcat.svg',
+          type: SkillType.SERVER
+        }
+      ]
+    }
+
+    this.os = {
+      skillName: 'os 📺',
+      skillItems: [
+        {
+          id: 1,
+          label: SkillName.WINDOWS,
+          image: 'assets/images/svg/windows.svg',
+          type: SkillType.OS
+        },
+        {
+          id: 2,
+          label: SkillName.LINUX,
+          image: 'assets/images/svg/linux.svg',
+          type: SkillType.OS
+        }
+      ]
+    }
+
+    this.tools = {
+      skillName: 'tools 🔨',
+      skillItems: [
+        {
+          id: 1,
+          label: SkillName.VS,
+          image: 'assets/images/svg/vs.svg',
+          type: SkillType.TOOLS
+        },
+        {
+          id: 2,
+          label: SkillName.VSCODE,
+          image: 'assets/images/svg/vscode.svg',
+          type: SkillType.TOOLS
+        },
+        {
+          id: 3,
+          label: SkillName.ECLIPSE,
+          image: 'assets/images/svg/eclipse.svg',
+          type: SkillType.TOOLS
+        },
+        {
+          id: 4,
+          label: SkillName.FIGMA,
+          image: 'assets/images/svg/figma.svg',
+          type: SkillType.TOOLS
+        },
+        {
+          id: 5,
+          label: SkillName.K8S,
+          image: 'assets/images/svg/k8s.svg',
+          type: SkillType.TOOLS
+        }
+      ]
+    }
+
+    this.others = {
+      skillName: 'others 🎲',
+      skillItems: [
+        {
+          id: 1,
+          label: SkillName.GITHUB_ACTION,
+          image: 'assets/images/svg/github-action.svg',
+          type: SkillType.OTHERS
+        },
+        {
+          id: 2,
+          label: SkillName.PYTHON,
+          image: 'assets/images/svg/python.svg',
+          type: SkillType.LANGUAGE
+        },
+        {
+          id: 3,
+          label: SkillName.PERL,
+          image: 'assets/images/svg/perl.svg',
+          type: SkillType.LANGUAGE
+        },
+        {
+          id: 4,
+          label: SkillName.YAML,
+          image: 'assets/images/svg/yaml.svg',
+          type: SkillType.LANGUAGE
         }
       ]
     }
@@ -217,111 +481,14 @@ export class SkillsComponent implements OnInit {
     this.skills = [
       { ...this.mainFEStack },
       { ...this.additionalBEStack },
-      {
-        skillName: 'Frontend',
-        skillItems: [
-          {
-            id: 1,
-            label: SkillName.TAILWINDCSS,
-            image: 'assets/images/svg/TailwindCSS.svg',
-            type: SkillType.CSS
-          },
-          {
-            id: 2,
-            label: SkillName.TYPESCRIPT,
-            image: 'assets/images/svg/TypeScript.svg',
-            type: SkillType.LANGUAGE
-          },
-          {
-            id: 3,
-            label: SkillName.GITHUB,
-            image: 'assets/images/svg/Github.svg',
-            type: SkillType.VERSION_CONTROL
-          },
-          {
-            id: 4,
-            label: SkillName.VSCODE,
-            image: 'assets/images/svg/VSCode.svg',
-            type: SkillType.CSS
-          },
-          {
-            id: 5,
-            label: SkillName.VSCODE,
-            image: 'assets/images/svg/VSCode.svg',
-            type: SkillType.CSS
-          }
-        ]
-      },
-      {
-        skillName: 'Backend',
-        skillItems: [
-          {
-            id: 1,
-            label: SkillName.TAILWINDCSS,
-            image: 'assets/images/svg/TailwindCSS.svg',
-            type: SkillType.CSS
-          },
-          {
-            id: 2,
-            label: SkillName.TYPESCRIPT,
-            image: 'assets/images/svg/TypeScript.svg',
-            type: SkillType.LANGUAGE
-          },
-          {
-            id: 3,
-            label: SkillName.GITHUB,
-            image: 'assets/images/svg/Github.svg',
-            type: SkillType.VERSION_CONTROL
-          },
-          {
-            id: 4,
-            label: SkillName.VSCODE,
-            image: 'assets/images/svg/VSCode.svg',
-            type: SkillType.CSS
-          },
-          {
-            id: 5,
-            label: SkillName.VSCODE,
-            image: 'assets/images/svg/VSCode.svg',
-            type: SkillType.CSS
-          }
-        ]
-      },
-      {
-        skillName: 'Tools',
-        skillItems: [
-          {
-            id: 1,
-            label: SkillName.TAILWINDCSS,
-            image: 'assets/images/svg/TailwindCSS.svg',
-            type: SkillType.CSS
-          },
-          {
-            id: 2,
-            label: SkillName.TYPESCRIPT,
-            image: 'assets/images/svg/TypeScript.svg',
-            type: SkillType.LANGUAGE
-          },
-          {
-            id: 3,
-            label: SkillName.GITHUB,
-            image: 'assets/images/svg/Github.svg',
-            type: SkillType.VERSION_CONTROL
-          },
-          {
-            id: 4,
-            label: SkillName.VSCODE,
-            image: 'assets/images/svg/VSCode.svg',
-            type: SkillType.CSS
-          },
-          {
-            id: 5,
-            label: SkillName.VSCODE,
-            image: 'assets/images/svg/VSCode.svg',
-            type: SkillType.CSS
-          }
-        ]
-      }
+      { ...this.frontend },
+      { ...this.backend },
+      { ...this.versionControl },
+      { ...this.packageControl },
+      { ...this.server },
+      { ...this.os },
+      { ...this.tools },
+      { ...this.others }
     ]
   }
 }

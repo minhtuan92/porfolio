@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
+
 import { TechCardComponent } from 'src/app/shared/components'
 import { TechCardItem } from '@shared/models'
 import { LayoutService } from '@core/services'
+import { SkillName, SkillType } from '@shared/constants'
 
 interface Skill {
   skillName: string
@@ -33,121 +35,181 @@ export class SkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.mainFEStack = {
-      skillName: 'Main Front-end Technology Stack',
+      skillName: 'main front-end technology stack 🏆',
       skillItems: [
         {
           id: 1,
-          label: 'Angular',
+          label: SkillName.ANGULAR,
           image: 'assets/images/svg/angular.svg',
-          type: 'Framework'
+          type: SkillType.FRAMEWORK
         },
         {
           id: 2,
-          label: 'Rxjs',
+          label: SkillName.RXJS,
           image: 'assets/images/svg/rxjs.svg',
-          type: 'Library'
+          type: SkillType.LIBRARY
         },
         {
           id: 3,
-          label: 'Typescript',
+          label: SkillName.TYPESCRIPT,
           image: 'assets/images/svg/TypeScript.svg',
-          type: 'Language'
+          type: SkillType.LANGUAGE
         },
         {
           id: 4,
-          label: 'TailwindCSS',
+          label: SkillName.TAILWINDCSS,
           image: 'assets/images/svg/TailwindCSS.svg',
-          type: 'CSS'
+          type: SkillType.CSS
         },
         {
           id: 5,
-          label: 'PostCSS',
+          label: SkillName.POSTCSS,
           image: 'assets/images/svg/postcss.svg',
-          type: 'CSS'
+          type: SkillType.CSS
         },
         {
           id: 6,
-          label: 'SASS',
+          label: SkillName.SASS,
           image: 'assets/images/svg/sass.svg',
-          type: 'CSS'
+          type: SkillType.CSS
         },
         {
           id: 7,
-          label: 'Bootstrap',
+          label: SkillName.BOOTSTRAP,
           image: 'assets/images/svg/bootstrap.svg',
-          type: 'CSS'
+          type: SkillType.CSS
         },
         {
           id: 8,
-          label: 'MaterialUI',
+          label: SkillName.MATERIALUI,
           image: 'assets/images/svg/material-ui.svg',
-          type: 'CSS'
+          type: SkillType.CSS
         }
       ]
     }
 
     this.additionalBEStack = {
-      skillName: 'Additional Back-end Technology Stack',
+      skillName: 'additional back-end technology stack 🎖',
       skillItems: [
         {
           id: 1,
-          label: '.Net Core',
+          label: SkillName.DOTNET_CORE,
           image: 'assets/images/svg/net-core.svg',
-          type: 'Framework'
+          type: SkillType.FRAMEWORK
         },
         {
           id: 2,
-          label: 'Entity Framework',
+          label: SkillName.ENTITY_FRAMEWORK,
           image: 'assets/images/svg/entity-framework.svg',
-          type: 'Framework'
+          type: SkillType.FRAMEWORK
         },
         {
           id: 3,
-          label: 'C#',
+          label: SkillName.CSHARP,
           image: 'assets/images/svg/csharp.svg',
-          type: 'Language'
+          type: SkillType.LANGUAGE
         },
         {
           id: 4,
-          label: 'ExpressJS',
+          label: SkillName.EXPRESSJS,
           image: 'assets/images/svg/expressjs.svg',
-          type: 'Framework'
+          type: SkillType.FRAMEWORK
         },
         {
           id: 5,
-          label: 'Javascript',
+          label: SkillName.JAVASCRIPT,
           image: 'assets/images/svg/js.svg',
-          type: 'Language'
+          type: SkillType.LANGUAGE
         },
         {
           id: 6,
-          label: 'Spring Boot',
+          label: SkillName.SPRINGBOOT,
           image: 'assets/images/svg/springboot.svg',
-          type: 'Framework'
+          type: SkillType.FRAMEWORK
         },
         {
           id: 7,
-          label: 'Java',
+          label: SkillName.JAVA,
           image: 'assets/images/svg/java.svg',
-          type: 'Language'
+          type: SkillType.LANGUAGE
         },
         {
           id: 8,
-          label: 'MySQL',
+          label: SkillName.MYSQL,
           image: 'assets/images/svg/mysql.svg',
-          type: 'Database'
+          type: SkillType.DATABASE
         },
         {
           id: 9,
-          label: 'PostgreSQL',
+          label: SkillName.POSTGRESQL,
           image: 'assets/images/svg/postgresql.svg',
-          type: 'Database'
+          type: SkillType.DATABASE
         },
         {
           id: 10,
-          label: 'MongoDB',
+          label: SkillName.MONGODB,
           image: 'assets/images/svg/mongodb.svg',
-          type: 'Database'
+          type: SkillType.DATABASE
+        }
+      ]
+    }
+
+    this.frontend = {
+      skillName: 'front-end 🌍',
+      skillItems: [
+        {
+          id: 1,
+          label: SkillName.ANGULAR,
+          image: 'assets/images/svg/angular.svg',
+          type: SkillType.FRAMEWORK
+        },
+        {
+          id: 2,
+          label: SkillName.RXJS,
+          image: 'assets/images/svg/rxjs.svg',
+          type: SkillType.LIBRARY
+        },
+        {
+          id: 3,
+          label: SkillName.TYPESCRIPT,
+          image: 'assets/images/svg/TypeScript.svg',
+          type: SkillType.LANGUAGE
+        },
+        {
+          id: 4,
+          label: SkillName.TAILWINDCSS,
+          image: 'assets/images/svg/TailwindCSS.svg',
+          type: SkillType.CSS
+        },
+        {
+          id: 5,
+          label: SkillName.POSTCSS,
+          image: 'assets/images/svg/postcss.svg',
+          type: SkillType.CSS
+        },
+        {
+          id: 6,
+          label: SkillName.SASS,
+          image: 'assets/images/svg/sass.svg',
+          type: SkillType.CSS
+        },
+        {
+          id: 7,
+          label: SkillName.BOOTSTRAP,
+          image: 'assets/images/svg/bootstrap.svg',
+          type: SkillType.CSS
+        },
+        {
+          id: 8,
+          label: SkillName.MATERIALUI,
+          image: 'assets/images/svg/material-ui.svg',
+          type: SkillType.CSS
+        },
+        {
+          id: 9,
+          label: SkillName.REACTJS,
+          image: 'assets/images/svg/material-ui.svg',
+          type: SkillType.CSS
         }
       ]
     }
@@ -160,33 +222,33 @@ export class SkillsComponent implements OnInit {
         skillItems: [
           {
             id: 1,
-            label: 'TailwindCSS',
+            label: SkillName.TAILWINDCSS,
             image: 'assets/images/svg/TailwindCSS.svg',
-            type: 'CSS'
+            type: SkillType.CSS
           },
           {
             id: 2,
-            label: 'TypeScript',
+            label: SkillName.TYPESCRIPT,
             image: 'assets/images/svg/TypeScript.svg',
-            type: 'Language'
+            type: SkillType.LANGUAGE
           },
           {
             id: 3,
-            label: 'Github',
+            label: SkillName.GITHUB,
             image: 'assets/images/svg/Github.svg',
-            type: 'Version Control'
+            type: SkillType.VERSION_CONTROL
           },
           {
             id: 4,
-            label: 'VSCode',
+            label: SkillName.VSCODE,
             image: 'assets/images/svg/VSCode.svg',
-            type: 'CSS'
+            type: SkillType.CSS
           },
           {
             id: 5,
-            label: 'VSCode',
+            label: SkillName.VSCODE,
             image: 'assets/images/svg/VSCode.svg',
-            type: 'CSS'
+            type: SkillType.CSS
           }
         ]
       },
@@ -195,33 +257,33 @@ export class SkillsComponent implements OnInit {
         skillItems: [
           {
             id: 1,
-            label: 'TailwindCSS',
+            label: SkillName.TAILWINDCSS,
             image: 'assets/images/svg/TailwindCSS.svg',
-            type: 'CSS'
+            type: SkillType.CSS
           },
           {
             id: 2,
-            label: 'TypeScript',
+            label: SkillName.TYPESCRIPT,
             image: 'assets/images/svg/TypeScript.svg',
-            type: 'Language'
+            type: SkillType.LANGUAGE
           },
           {
             id: 3,
-            label: 'Github',
+            label: SkillName.GITHUB,
             image: 'assets/images/svg/Github.svg',
-            type: 'Version Control'
+            type: SkillType.VERSION_CONTROL
           },
           {
             id: 4,
-            label: 'VSCode',
+            label: SkillName.VSCODE,
             image: 'assets/images/svg/VSCode.svg',
-            type: 'CSS'
+            type: SkillType.CSS
           },
           {
             id: 5,
-            label: 'VSCode',
+            label: SkillName.VSCODE,
             image: 'assets/images/svg/VSCode.svg',
-            type: 'CSS'
+            type: SkillType.CSS
           }
         ]
       },
@@ -230,33 +292,33 @@ export class SkillsComponent implements OnInit {
         skillItems: [
           {
             id: 1,
-            label: 'TailwindCSS',
+            label: SkillName.TAILWINDCSS,
             image: 'assets/images/svg/TailwindCSS.svg',
-            type: 'CSS'
+            type: SkillType.CSS
           },
           {
             id: 2,
-            label: 'TypeScript',
+            label: SkillName.TYPESCRIPT,
             image: 'assets/images/svg/TypeScript.svg',
-            type: 'Language'
+            type: SkillType.LANGUAGE
           },
           {
             id: 3,
-            label: 'Github',
+            label: SkillName.GITHUB,
             image: 'assets/images/svg/Github.svg',
-            type: 'Version Control'
+            type: SkillType.VERSION_CONTROL
           },
           {
             id: 4,
-            label: 'VSCode',
+            label: SkillName.VSCODE,
             image: 'assets/images/svg/VSCode.svg',
-            type: 'CSS'
+            type: SkillType.CSS
           },
           {
             id: 5,
-            label: 'VSCode',
+            label: SkillName.VSCODE,
             image: 'assets/images/svg/VSCode.svg',
-            type: 'CSS'
+            type: SkillType.CSS
           }
         ]
       }

@@ -1,6 +1,6 @@
 <header
   [ngClass]="(layoutService.isMobile$ | async) ? 'w-[100vw] md:pl-24 md:pr-10' : 'w-[calc(100%-var(--sidebar-width))]'"
-  class="fixed top-0 z-10 flex h-[var(--header-height)] items-center justify-between border-b border-[rgba(34,49,79,0.10)] backdrop-blur-[0.125rem] transition-colors dark:border-manganese-black dark:bg-[rgba(24,24,29,0.6)] lg:px-0"
+  class="fixed top-0 z-10 flex h-[var(--header-height)] items-center justify-between border-b border-[rgba(34,49,79,0.10)] backdrop-blur-[0.125rem] transition-colors lg:px-0 dark:border-manganese-black dark:bg-[rgba(24,24,29,0.6)]"
 >
   <a
     class="flex h-full flex-col items-center justify-center px-4 leading-none lg:px-6"
@@ -38,7 +38,7 @@
     </nav>
   } @else {
     <div class="control-btn flex">
-      <!-- <app-darkmode-button></app-darkmode-button> -->
+      <app-darkmode-button></app-darkmode-button>
       <button
         type="button"
         title="Menu"
@@ -50,7 +50,7 @@
           viewBox="auto"
           src="assets/icons/svg/menu.svg"
           [ngClass]="!isMenuShow ? 'rotate-0 scale-100' : 'rotate-90 scale-0'"
-          class="h-6 w-6 stroke-lavender-mauve transition-all duration-300 dark:stroke-pastel-placebo"
+          class="h-6 w-6 stroke-dark-knight transition-all duration-300 dark:stroke-pastel-placebo"
         >
         </svg-icon>
         <svg-icon
@@ -58,7 +58,7 @@
           viewBox="auto"
           src="assets/icons/svg/close.svg"
           [ngClass]="!isMenuShow ? '-rotate-90 scale-0' : 'rotate-0 scale-100'"
-          class="absolute h-6 w-6 stroke-lavender-mauve transition-all duration-300 dark:stroke-pastel-placebo"
+          class="absolute h-6 w-6 stroke-dark-knight transition-all duration-300 dark:stroke-pastel-placebo"
         >
         </svg-icon>
       </button>
@@ -71,9 +71,24 @@
   [popup]="true"
   [styleClass]="
     '!bg-pastel-placebo/80 dark:!bg-dark-knight/80 !backdrop-blur-lg flex flex-col items-center justify-center ' +
-    ((layoutService.screenSizeChanged$ | async)?.includes('Handset')
-      ? 'w-full h-[calc(100dvh-var(--header-height))]'
-      : '')
+    ((layoutService.screenSizeChanged$ | async)?.includes('Handset') ? 'w-full h-dvh' : '')
   "
   (onHide)="isMenuShow = false"
-></p-menu>
+>
+</p-menu>
+@if ((layoutService.screenSizeChanged$ | async)?.includes('Handset') && isMenuShow === true) {
+  <button
+    type="button"
+    title="Close Menu"
+    class="absolute right-4 top-4 z-[9999] inline-flex animate-zoomin items-center rounded-full p-3 shadow-xl"
+    (click)="toggleMenu(); menu.toggle($event)"
+  >
+    <svg-icon
+      [applyClass]="true"
+      viewBox="auto"
+      src="assets/icons/svg/close.svg"
+      class="h-7 w-7 stroke-dark-knight dark:stroke-pastel-placebo"
+    >
+    </svg-icon>
+  </button>
+}

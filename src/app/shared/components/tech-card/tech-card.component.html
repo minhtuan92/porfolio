@@ -1,6 +1,6 @@
 <div
   [class]="
-    'flex flex-row gap-6 rounded-[1.375rem] border border-gallery bg-concrete p-3.5 transition duration-1000 dark:border-tuna dark:bg-mirage lg:flex-col lg:gap-10 lg:px-6 lg:pb-6 lg:pt-[5.8125rem] ' +
+    'flex flex-row gap-6 rounded-[1.375rem] border border-gallery bg-concrete p-3.5 transition duration-300 lg:flex-col lg:gap-10 lg:px-6 lg:pb-6 lg:pt-[5.8125rem] dark:border-tuna dark:bg-mirage ' +
     styleClass
   "
 >
@@ -9,18 +9,18 @@
       [applyClass]="true"
       viewBox="auto"
       [src]="item.image"
-      class="h-16 w-16 fill-lavender-mauve stroke-2 dark:fill-pastel-placebo lg:h-[7.125rem] lg:w-[7.125rem]"
+      class="h-16 w-16 fill-lavender-mauve stroke-2 lg:h-[7.125rem] lg:w-[7.125rem] dark:fill-pastel-placebo"
     >
     </svg-icon>
   </div>
   <div class="flex grow items-center justify-between">
     <span
-      class="truncate font-normal text-rangoon-green transition duration-1000 dark:text-white lg:text-[1.625rem] lg:leading-7"
+      class="truncate font-normal text-rangoon-green transition duration-300 lg:text-[1.625rem] lg:leading-7 dark:text-white"
       >{{ item.label }}</span
     >
     <p-badge
       [value]="item.type"
-      styleClass="py-1.5 px-3 flex h-7 rounded-[1.625rem] items-center justify-center bg-white/70 transition duration-1000 dark:bg-rangoon-green text-sm leading-normal font-normal text-dark-gray"
+      styleClass="py-1.5 px-3 flex h-7 rounded-[1.625rem] items-center justify-center bg-white/70 transition duration-300 dark:bg-rangoon-green text-sm leading-normal font-normal text-dark-gray"
     ></p-badge>
   </div>
 </div>

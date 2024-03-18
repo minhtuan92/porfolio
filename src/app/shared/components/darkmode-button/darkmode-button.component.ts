@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common'
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
-import { ThemeService } from '@core/services'
+import { LayoutService, ThemeService } from '@core/services'
 import { LOCALSTORAGE_ITEMS, THEME_OPTIONS } from '@shared/constants'
 import { AngularSvgIconModule } from 'angular-svg-icon'
 
@@ -15,7 +15,10 @@ import { AngularSvgIconModule } from 'angular-svg-icon'
 export class DarkmodeButtonComponent implements OnInit {
   darkModeActive = false
 
-  constructor(private themeService: ThemeService) {}
+  constructor(
+    private themeService: ThemeService,
+    public layoutService: LayoutService
+  ) {}
 
   ngOnInit(): void {
     const theme = this.themeService.currentTheme

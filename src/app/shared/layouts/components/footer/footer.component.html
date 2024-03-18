@@ -4,7 +4,7 @@
       ? 'w-full flex-col gap-10 px-6 text-xl/6'
       : 'fixed bottom-0 z-[7] h-[var(--header-height)] w-[calc(100%-var(--sidebar-width))] text-2xl'
   "
-  class="flex items-center border-none bg-alabaster/60 font-normal backdrop-blur-[0.125rem] transition-colors duration-1000 dark:bg-[rgba(24,24,29,0.30)]"
+  class="flex items-center border-none bg-alabaster/60 font-normal backdrop-blur-[0.125rem] transition-colors duration-300 dark:bg-[rgba(24,24,29,0.30)]"
 >
   <div
     [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-10' : 'h-full gap-6 border-t pl-8'"

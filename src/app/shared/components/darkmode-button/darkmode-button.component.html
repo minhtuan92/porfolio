@@ -1,7 +1,7 @@
 <button
   type="button"
   title="Toggle Dark Mode"
-  class="relative inline-flex items-center justify-center p-6 transition"
+  class="relative inline-flex items-center justify-center p-4.5 transition lg:p-6"
   (click)="handleToggleTheme()"
 >
   <svg-icon
@@ -18,10 +18,12 @@
     class="absolute h-6 w-6 rotate-0 scale-100 stroke-dark-knight stroke-2 transition-all duration-300 dark:-rotate-90 dark:scale-0"
   >
   </svg-icon>
-  <div class="test container absolute flex h-full w-full items-center justify-center">
-    <div
-      [ngClass]="{ 'scale-[1]': darkModeActive }"
-      class="dark-mode relative z-[-100] flex h-[250vh] w-[250vh] flex-[0_0_auto] scale-0 rounded-[50%] bg-dark-knight transition duration-1000 ease-in-out lg:h-[250vw] lg:w-[250vw]"
-    ></div>
-  </div>
+  @if ((layoutService.isMobile$ | async) === false) {
+    <div class="test container absolute flex h-full w-full items-center justify-center">
+      <div
+        [ngClass]="{ 'scale-[1]': darkModeActive }"
+        class="dark-mode relative z-[-100] flex h-[250vh] w-[250vh] flex-[0_0_auto] scale-0 rounded-[50%] bg-dark-knight transition duration-300 ease-in-out lg:h-[250vw] lg:w-[250vw]"
+      ></div>
+    </div>
+  }
 </button>

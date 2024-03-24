@@ -41,7 +41,9 @@ module.exports = {
         iron: '#D7D9DD',
         alabaster: '#F9F9F9',
         'rangoon-green': '#181818',
-        'dark-gray': '#808080'
+        'dark-gray': '#808080',
+        'burnt-sienna': '#E67444',
+        'ucla-blue': '#536C8E'
       },
       boxShadow: {
         xs: '0px 1px 2px 0px rgba(16, 24, 40, 0.05)'

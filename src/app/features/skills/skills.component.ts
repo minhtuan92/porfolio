@@ -25,6 +25,7 @@ export class SkillsComponent implements OnInit {
   additionalBEStack: Skill
   frontend: Skill
   backend: Skill
+  dataBase: Skill
   versionControl: Skill
   packageControl: Skill
   server: Skill
@@ -168,6 +169,12 @@ export class SkillsComponent implements OnInit {
           label: SkillName.REDIS,
           image: 'assets/images/svg/redis.svg',
           type: SkillType.TOOLS
+        },
+        {
+          id: 13,
+          label: SkillName.DOCKER,
+          image: 'assets/images/svg/docker.svg',
+          type: SkillType.TOOLS
         }
       ]
     }
@@ -251,7 +258,7 @@ export class SkillsComponent implements OnInit {
           id: 13,
           label: SkillName.STRAPI,
           image: 'assets/images/svg/strapi.svg',
-          type: SkillType.LIBRARY
+          type: SkillType.OTHERS
         },
         {
           id: 14,
@@ -293,7 +300,7 @@ export class SkillsComponent implements OnInit {
           id: 20,
           label: SkillName.WEBPACK,
           image: 'assets/images/svg/webpack.svg',
-          type: SkillType.LIBRARY
+          type: SkillType.TOOLS
         }
       ]
     }
@@ -306,6 +313,90 @@ export class SkillsComponent implements OnInit {
           label: SkillName.NODEJS,
           image: 'assets/images/svg/nodejs.svg',
           type: SkillType.FRAMEWORK
+        },
+        {
+          id: 2,
+          label: SkillName.EXPRESSJS,
+          image: 'assets/images/svg/expressjs.svg',
+          type: SkillType.FRAMEWORK
+        },
+        {
+          id: 3,
+          label: SkillName.TYPESCRIPT,
+          image: 'assets/images/svg/TypeScript.svg',
+          type: SkillType.LANGUAGE
+        },
+        {
+          id: 4,
+          label: SkillName.JAVASCRIPT,
+          image: 'assets/images/svg/js.svg',
+          type: SkillType.LANGUAGE
+        },
+        {
+          id: 5,
+          label: SkillName.DOTNET_CORE,
+          image: 'assets/images/svg/net-core.svg',
+          type: SkillType.FRAMEWORK
+        },
+        {
+          id: 6,
+          label: SkillName.ENTITY_FRAMEWORK,
+          image: 'assets/images/svg/entity-framework.svg',
+          type: SkillType.FRAMEWORK
+        },
+        {
+          id: 7,
+          label: SkillName.CSHARP,
+          image: 'assets/images/svg/csharp.svg',
+          type: SkillType.LANGUAGE
+        },
+        {
+          id: 8,
+          label: SkillName.SPRINGBOOT,
+          image: 'assets/images/svg/springboot.svg',
+          type: SkillType.FRAMEWORK
+        },
+        {
+          id: 9,
+          label: SkillName.JAVA,
+          image: 'assets/images/svg/java.svg',
+          type: SkillType.LANGUAGE
+        },
+        {
+          id: 9,
+          label: SkillName.DOCKER,
+          image: 'assets/images/svg/docker.svg',
+          type: SkillType.TOOLS
+        }
+      ]
+    }
+
+    this.dataBase = {
+      skillName: 'database 📚',
+      skillItems: [
+        {
+          id: 1,
+          label: SkillName.POSTGRESQL,
+          image: 'assets/images/svg/postgresql.svg',
+          type: SkillType.DATABASE
+        },
+        {
+          id: 2,
+          label: SkillName.MYSQL,
+          image: 'assets/images/svg/mysql.svg',
+          type: SkillType.DATABASE
+        },
+        {
+          id: 3,
+          label: SkillName.POSTGRESQL,
+          image: 'assets/images/svg/postgresql.svg',
+          type: SkillType.DATABASE
+        },
+        {
+          id: 4,
+          label: SkillName.MONGODB,
+          image: 'assets/images/svg/mongodb.svg',
+          type: SkillType.DATABASE
         }
       ]
     }
@@ -444,6 +535,24 @@ export class SkillsComponent implements OnInit {
           label: SkillName.K8S,
           image: 'assets/images/svg/k8s.svg',
           type: SkillType.TOOLS
+        },
+        {
+          id: 6,
+          label: SkillName.KAFKA,
+          image: 'assets/images/svg/kafka.svg',
+          type: SkillType.TOOLS
+        },
+        {
+          id: 7,
+          label: SkillName.REDIS,
+          image: 'assets/images/svg/redis.svg',
+          type: SkillType.TOOLS
+        },
+        {
+          id: 8,
+          label: SkillName.DOCKER,
+          image: 'assets/images/svg/docker.svg',
+          type: SkillType.TOOLS
         }
       ]
     }
@@ -474,6 +583,18 @@ export class SkillsComponent implements OnInit {
           label: SkillName.YAML,
           image: 'assets/images/svg/yaml.svg',
           type: SkillType.LANGUAGE
+        },
+        {
+          id: 5,
+          label: SkillName.WEBPACK,
+          image: 'assets/images/svg/webpack.svg',
+          type: SkillType.TOOLS
+        },
+        {
+          id: 6,
+          label: SkillName.STRAPI,
+          image: 'assets/images/svg/strapi.svg',
+          type: SkillType.OTHERS
         }
       ]
     }

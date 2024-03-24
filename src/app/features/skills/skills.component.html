@@ -1,6 +1,6 @@
-<div class="flex flex-col items-start gap-8">
+<div class="flex flex-col items-start gap-8 lg:pb-8">
   <div class="flex w-full animate-[fadeinleft_0.5s_ease-in] flex-col items-start gap-7">
-    <span class="above-typing-header_text">//Programming languages I have learned</span>
+    <span class="above-typing-header_text">// Programming languages I have learned</span>
     <div class="typing-header">
       <p>{{ '{“' }}&nbsp;</p>
       <p class="typing-header__text type-skills"></p>
@@ -10,7 +10,7 @@
   <div class="flex w-full flex-col items-start gap-11 lg:gap-20">
     @for (skill of skills; track $index) {
       <div class="frontend-items item-start flex w-full flex-col gap-8">
-        <span class="text-lavender-mauve">//{{ skill.skillName }}</span>
+        <span class="text-lavender-mauve">// {{ skill.skillName }}</span>
         <div
           [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col' : 'flex-wrap'"
           class="flex content-start items-start gap-3.5 lg:gap-[3.75rem]"

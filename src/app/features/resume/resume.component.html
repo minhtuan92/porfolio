@@ -1,4 +1,4 @@
-<div class="flex flex-col items-start gap-11 lg:gap-8">
+<div class="flex flex-col items-start gap-11 lg:gap-8 lg:pb-8">
   <div class="flex flex-col gap-7">
     <div class="inline-flex animate-[fadeinleft_0.5s_ease-in] flex-nowrap">
       <div class="typing-header">
@@ -23,32 +23,63 @@
     </a>
   </div>
   <div
-    [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-11' : 'flex-row justify-between gap-60'"
+    [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-6' : 'flex-row justify-between md:gap-36 lg:gap-52'"
     class="flex w-full animate-[fadeinleft_0.5s_ease-in]"
   >
-    <div class="flex flex-col gap-2 lg:gap-5">
-      <span class="text-lavender-mauve">//experience</span>
-      <div class="flex flex-col gap-4 lg:gap-16">
+    <div class="flex flex-col gap-5 md:w-1/2">
+      <span class="text-lavender-mauve">// experiences</span>
+      <div class="flex flex-col gap-5">
         <div class="flex flex-col gap-2 lg:gap-4">
-          <p class="text-green-haze dark:text-screen-glow">_2000-2023</p>
-          <p>I am able to handle multiple tasks on a daily basis.</p>
+          <p class="text-green-haze dark:text-screen-glow">_Sep 2021 - Present</p>
+          <p class="font-semibold uppercase">Working as Technical Lead and Fullstack Developer</p>
+          <p>
+            Perform development activities: define code structure, code development, code deployment using CI/CD,
+            technical documentation, maintenance works and training for new members. Troubleshoot and handle technical
+            blocker issues.
+          </p>
         </div>
         <div class="flex flex-col gap-2 lg:gap-4">
-          <p class="text-green-haze dark:text-screen-glow">_2000-2023</p>
-          <p>I am able to handle multiple tasks on a daily basis.</p>
+          <p class="text-green-haze dark:text-screen-glow">_Oct 2019 - Sep 2023</p>
+          <p class="font-semibold uppercase">Working as Fullstack Developer</p>
+          <p>
+            Perform development activities: code development, code deployment and troubleshoot technical issues.
+            Directly involved in implementation phases.
+          </p>
+        </div>
+        <div class="flex flex-col gap-2 lg:gap-4">
+          <p class="text-green-haze dark:text-screen-glow">_Dec 2017 - Oct 2019</p>
+          <p class="font-semibold uppercase">Working as Automation QA</p>
+          <p>
+            Define code structure, technology stack. Develop new automation tests and maintenance works. Troubleshoot
+            issues and training for new members.
+          </p>
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-2 lg:gap-5">
-      <span class="text-lavender-mauve">//education</span>
-      <div class="flex flex-col gap-4 lg:gap-16">
-        <div class="flex flex-col gap-2 lg:gap-4">
-          <p class="text-green-haze dark:text-screen-glow">_2000-2023</p>
-          <p>I am able to handle multiple tasks on a daily basis.</p>
+
+    <div class="flex flex-col gap-6 lg:gap-12">
+      <div class="flex flex-col gap-5">
+        <span class="text-lavender-mauve">// achievements</span>
+        <div class="flex flex-col gap-5">
+          <div class="flex flex-col gap-2 lg:gap-4">
+            <p class="text-green-haze dark:text-screen-glow">_2023</p>
+            <p class="font-semibold uppercase">Team Star Performer Q4/2023</p>
+          </div>
+          <div class="flex flex-col gap-2 lg:gap-4">
+            <p class="text-green-haze dark:text-screen-glow">_2018</p>
+            <p class="font-semibold uppercase">Team Star Performer Q2/2018</p>
+          </div>
         </div>
-        <div class="flex flex-col gap-2 lg:gap-4">
-          <p class="text-green-haze dark:text-screen-glow">_2000-2023</p>
-          <p>I am able to handle multiple tasks on a daily basis.</p>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        <span class="text-lavender-mauve">// education</span>
+        <div class="flex flex-col gap-5">
+          <div class="flex flex-col gap-2 lg:gap-4">
+            <p class="text-green-haze dark:text-screen-glow">_2010 - 2015</p>
+            <p class="font-semibold uppercase">Bachelor of Electrical & Electronics Engineering</p>
+            <p>Ho Chi Minh City University of Technology</p>
+          </div>
         </div>
       </div>
     </div>

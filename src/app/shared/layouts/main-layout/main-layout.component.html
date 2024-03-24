@@ -16,7 +16,7 @@
     <app-sidebar />
   </div>
   <div
-    [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : ''"
+    [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : 'md:w-full lg:w-auto'"
     class="flex h-full flex-col lg:flex-1 lg:justify-between"
   >
     <app-header />
@@ -39,7 +39,7 @@
         </div>
         @if (layoutService.isMobile$ | async) {
           <div
-            class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 md:-mx-28 dark:border-manganese-black"
+            class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 dark:border-manganese-black md:-mx-28"
           >
             <app-footer></app-footer>
           </div>

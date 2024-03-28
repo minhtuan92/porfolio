@@ -38,13 +38,53 @@ export class ProjectsComponent implements OnInit {
       },
       {
         id: 3,
-        name: 'BUSSINESS WORKFLOW MANAGEMENT SYSTEM - Technical Lead',
+        name: 'Bussiness Workflow Management System - Technical Lead',
         shortName: 'Dynamic Workflow',
         desc: `Description: A system to manage company business activities include modules: Dynamic Workflow using BPMN, Form Management, Task Management, ...
               
-              Responsibilities: perform front development activities, troubleshoot and handle technical blocker issues.
+              Responsibilities: define technology, technical stack and optimize development processes for this project. Work closely with PO and technical architect on feature design, requirement clarifications, and architecture clarification. Propose good design patterns and implementation guidelines for team. Perform general development activities: code development, unit test, code deployment, technical documentation, and maintenance works (fix bug or customer issues, support customer requests/questions directly). Perform code review, technical support for team members. Troubleshoot and handle technical blocker issues. Review performance and security for this project. Training new members.
               
-              Technologies: angular, tailwindCSS, springboot, typescript, java, cassandra, postgreSQL, mongoDB, kafka, redis...`
+              Technologies: c#, netcore 6.0, entity framework, Angular, tailwindCSS, typescript, SCSS, postgreSQL, mongoDB, keycloak, hangfire, kafka, sonarqube, firebase`
+      },
+      {
+        id: 4,
+        name: 'Building Access Management System - Full Stack Developer',
+        shortName: 'Building Access',
+        desc: `Description: A building access control system, at its most basic form, is a way to ensure only authorized people are able to enter your building. This adds an additional layer of security and protection for your residents, employees, information, and assets.
+              
+              Responsibilities: perform front development activities on both BE (Nodejs) and FE(Angular), troubleshoot and handle technical blocker issues.
+              
+              Technologies: angular, tailwindCSS, nodejs, expressjs, material ui, aws lamda, aws s3, aws cloudFront, mongoDB, dynamoDB, firebase, sendgrid, twilio, mosquitto (mqtt), sonarqube...`
+      },
+      {
+        id: 5,
+        name: 'Web Automation Test - Automation QA',
+        shortName: 'Web Automation',
+        desc: `Description: Automation Testing for video conferencing and communication platform.
+              
+              Responsibilities: define code structure, technology stack. Develop new automation test and maintenance works. Troubleshoot issues and training for new member.
+              
+              Technologies: cypress, nodejs, typescript, selenium.`
+      },
+      {
+        id: 6,
+        name: 'Telecom Automation Test 2 - Automation QA',
+        shortName: 'Telecom Automation 2',
+        desc: `Description: Automation test for telecom project.
+              
+              Responsibilities: define code structure, technology stack. Develop new automation test and maintenance works. Troubleshoot issues and training for new member.
+              
+              Technologies: python, robotframework, selenium, appium.`
+      },
+      {
+        id: 7,
+        name: 'Telecom Automation Test 1 - Automation QA',
+        shortName: 'Telecom Automation 1',
+        desc: `Description: Automation test for telecom project.
+              
+              Responsibilities: develop new automation test and maintenance works. Troubleshoot issues.
+              
+              Technologies: junit, java, selenium.`
       }
     ]
   }

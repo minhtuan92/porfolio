@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
+import { ChangeDetectionStrategy, Component, input } from '@angular/core'
 import { LayoutService } from '@core/services'
 
 import { ProjectItem } from '@shared/models'
@@ -14,7 +14,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectComponent {
-  @Input({ required: true }) project: ProjectItem
+  project = input.required<ProjectItem>()
 
   constructor(protected layoutService: LayoutService) {}
 }

@@ -14,7 +14,7 @@
     <nav class="social-nav flex h-full items-center">
       <a
         [ngClass]="(layoutService.isMobile$ | async) ? '' : 'border-l last:border-r'"
-        class="flex h-full items-center justify-center border-[rgba(34,49,79,0.10)] px-6 dark:border-manganese-black"
+        class="flex h-full items-center justify-center border-[rgba(34,49,79,0.10)] px-6 hover:bg-iron/20 dark:border-manganese-black dark:hover:bg-manganese-black"
         *ngFor="let socialApp of socialApps; index as i"
         [href]="[socialApp.link]"
         target="_blank"

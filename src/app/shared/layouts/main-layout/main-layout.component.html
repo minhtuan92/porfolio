@@ -39,13 +39,13 @@
         </div>
         @if (layoutService.isMobile$ | async) {
           <div
-            class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 md:-mx-28 dark:border-manganese-black"
+            class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 dark:border-manganese-black md:-mx-28"
           >
             <app-footer></app-footer>
           </div>
         }
       </div>
-      <p-scrollTop target="parent" styleClass="fixed bg-manganese-black"></p-scrollTop>
+      <p-scrollTop target="parent" styleClass="fixed dark:bg-manganese-black bg-pastel-placebo"></p-scrollTop>
     </div>
 
     @if ((layoutService.isMobile$ | async) === false) {

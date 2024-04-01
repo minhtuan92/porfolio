@@ -32,7 +32,7 @@ module.exports = {
         'pastel-placebo': '#E7E7E7',
         'screen-glow': '#6CE9A6',
         anakiwa: '#84CAFF',
-        'lavender-rose': '#FAA7E0',
+        'lavender-rose': '#DC73BB',
         tuna: '#29374A',
         mirage: '#1D2939',
         gallery: '#EBEBEB',

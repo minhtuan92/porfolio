@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy, Optional, SkipSelf } from '@angular/core'
+import { Injectable, OnDestroy, Optional, SkipSelf, signal } from '@angular/core'
 import { EnsureLoadedOnceGuard } from '@shared/utils'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs'
@@ -20,6 +20,7 @@ export class LayoutService extends EnsureLoadedOnceGuard implements OnDestroy {
   private screenSizeChanged = new BehaviorSubject<string>('')
   private isMobile = new BehaviorSubject<boolean>(false)
   readonly isMobile$ = this.isMobile.asObservable()
+  isMobileSignal = signal<boolean>(false)
   readonly screenSizeChanged$ = this.screenSizeChanged.asObservable()
   currentScreenSize: string
 
@@ -38,6 +39,12 @@ export class LayoutService extends EnsureLoadedOnceGuard implements OnDestroy {
           }
         }
         this.isMobile.next(
+          !(
+            this.currentScreenSize === SCREEN_SIZE.TABLET_LANDSCAPE ||
+            this.currentScreenSize === SCREEN_SIZE.WEB_LANDSCAPE
+          )
+        )
+        this.isMobileSignal.set(
           !(
             this.currentScreenSize === SCREEN_SIZE.TABLET_LANDSCAPE ||
             this.currentScreenSize === SCREEN_SIZE.WEB_LANDSCAPE

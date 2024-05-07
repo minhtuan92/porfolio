@@ -16,7 +16,7 @@
     <app-sidebar />
   </div>
   <div
-    [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : 'md:w-full lg:w-auto'"
+    [ngClass]="layoutService.isMobileSignal() ? 'w-full' : 'md:w-full lg:w-auto'"
     class="flex h-full flex-col lg:flex-1 lg:justify-between"
   >
     <app-header />
@@ -27,7 +27,7 @@
         scrollbars: { autoHide: 'leave', autoHideDelay: 100, theme: scrollbarTheme }
       }"
       [ngClass]="
-        (layoutService.isMobile$ | async)
+        layoutService.isMobileSignal()
           ? 'h-[calc(100%-var(--header-height))] px-4 pt-14 md:px-28 md:pt-20'
           : 'h-[calc(100%-var(--header-height)*2)] px-32 py-20 lg:px-44 lg:py-28'
       "
@@ -37,7 +37,7 @@
         <div>
           <router-outlet></router-outlet>
         </div>
-        @if (layoutService.isMobile$ | async) {
+        @if (layoutService.isMobileSignal()) {
           <div
             class="-mx-4 mt-16 border-t border-[rgba(34,49,79,0.10)] pb-16 pt-10 dark:border-manganese-black md:-mx-28"
           >
@@ -48,7 +48,7 @@
       <p-scrollTop target="parent" styleClass="fixed dark:bg-manganese-black bg-pastel-placebo"></p-scrollTop>
     </div>
 
-    @if ((layoutService.isMobile$ | async) === false) {
+    @if (layoutService.isMobileSignal() === false) {
       <app-footer />
     }
   </div>

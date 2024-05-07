@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, inject } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterOutlet } from '@angular/router'
 
@@ -30,11 +30,9 @@ import { AngularSvgIconModule } from 'angular-svg-icon'
 })
 export class MainLayoutComponent implements OnInit {
   scrollbarTheme: string
-  constructor(
-    private themeService: ThemeService,
-    private destroyService: DestroyService,
-    public layoutService: LayoutService
-  ) {}
+  private themeService = inject(ThemeService)
+  private destroyService = inject(DestroyService)
+  layoutService = inject(LayoutService)
 
   ngOnInit(): void {
     this.updateScrollBarTheme()

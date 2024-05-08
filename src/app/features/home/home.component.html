@@ -1,4 +1,4 @@
-<div [ngClass]="(layoutService.isMobile$ | async) ? '' : 'h-full'" class="flex flex-col gap-11 lg:gap-8 lg:pb-8">
+<div [ngClass]="layoutService.isMobile() ? '' : 'h-full'" class="flex flex-col gap-11 lg:gap-8 lg:pb-8">
   <div class="flex animate-[fadeinleft_0.5s_ease-in] flex-col items-start gap-4 lg:gap-7">
     <p class="above-typing-header_text">// Hi, I'm Tuan Tran, a...</p>
     <div class="typing-header">
@@ -8,11 +8,11 @@
     </div>
   </div>
   <div
-    [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-11' : 'flex-row gap-6'"
+    [ngClass]="layoutService.isMobile() ? 'flex-col gap-11' : 'flex-row gap-6'"
     class="flex grow items-center justify-between"
   >
     <div
-      [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : 'w-[70%]'"
+      [ngClass]="layoutService.isMobile() ? 'w-full' : 'w-[70%]'"
       class="flex animate-[zoomin_0.5s_ease-in] flex-col gap-10"
     >
       <p>

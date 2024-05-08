@@ -23,7 +23,7 @@
     </a>
   </div>
   <div
-    [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col gap-6' : 'flex-row justify-between md:gap-36 lg:gap-52'"
+    [ngClass]="layoutService.isMobile() ? 'flex-col gap-6' : 'flex-row justify-between md:gap-36 lg:gap-52'"
     class="flex w-full animate-[fadeinleft_0.5s_ease-in]"
   >
     <div class="flex flex-col gap-5 md:w-1/2">

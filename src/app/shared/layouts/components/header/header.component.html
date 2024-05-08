@@ -1,19 +1,19 @@
 <header
-  [ngClass]="(layoutService.isMobile$ | async) ? 'w-[100vw] md:pl-24 md:pr-10' : 'w-[calc(100%-var(--sidebar-width))]'"
+  [ngClass]="layoutService.isMobile() ? 'w-[100vw] md:pl-24 md:pr-10' : 'w-[calc(100%-var(--sidebar-width))]'"
   class="fixed top-0 z-10 flex h-[var(--header-height)] items-center justify-between border-b border-[rgba(34,49,79,0.10)] backdrop-blur-[0.125rem] transition-colors dark:border-manganese-black dark:bg-[rgba(24,24,29,0.6)] lg:px-0"
 >
   <a
     class="flex h-full flex-col items-center justify-center px-4 leading-none lg:px-6"
     [routerLink]="['/']"
     [routerLinkActiveOptions]="{ exact: true }"
-    [routerLinkActive]="(layoutService.isMobile$ | async) ? 'router-link-active' : ''"
+    [routerLinkActive]="layoutService.isMobile() ? 'router-link-active' : ''"
   >
     <p>// Tuan Tran</p>
-    @if ((layoutService.isMobile$ | async) === false) {
+    @if (layoutService.isMobile() === false) {
       <p class="text-green-haze dark:text-screen-glow">&nbsp;web_dev</p>
     }
   </a>
-  @if ((layoutService.isMobile$ | async) === false) {
+  @if (layoutService.isMobile() === false) {
     <nav class="navigation flex h-full grow justify-between">
       <div class="flex items-center">
         @for (nav of mainNav; track nav.id) {
@@ -28,7 +28,7 @@
         }
       </div>
       <a
-        class="flex items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 dark:border-manganese-black"
+        class="flex items-center justify-center border-l border-[rgba(34,49,79,0.10)] px-6 hover:bg-iron/20 dark:border-manganese-black dark:hover:bg-manganese-black"
         [routerLink]="[contactNav.routerLink]"
         [routerLinkActiveOptions]="{ exact: true }"
         routerLinkActive="router-link-active"

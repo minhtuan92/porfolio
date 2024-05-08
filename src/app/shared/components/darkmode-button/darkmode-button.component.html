@@ -18,7 +18,7 @@
     class="absolute h-6 w-6 rotate-0 scale-100 stroke-dark-knight stroke-2 transition-all duration-300 dark:-rotate-90 dark:scale-0"
   >
   </svg-icon>
-  @if ((layoutService.isMobile$ | async) === false) {
+  @if (layoutService.isMobile() === false) {
     <div class="container absolute flex h-full w-full items-center justify-center">
       <div
         [ngClass]="{ 'scale-[1]': darkModeActive }"

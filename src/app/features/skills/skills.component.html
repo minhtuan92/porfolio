@@ -12,16 +12,14 @@
       <div class="frontend-items item-start flex w-full flex-col gap-8">
         <span class="text-lavender-mauve">// {{ skill.skillName }}</span>
         <div
-          [ngClass]="(layoutService.isMobile$ | async) ? 'flex-col' : 'flex-wrap'"
+          [ngClass]="layoutService.isMobile() ? 'flex-col' : 'flex-wrap'"
           class="flex content-start items-start gap-3.5 lg:gap-[3.75rem]"
         >
           @for (skillItem of skill.skillItems; track skillItem.id) {
             <app-tech-card
-              [ngClass]="(layoutService.isMobile$ | async) ? 'w-full' : ''"
+              [ngClass]="layoutService.isMobile() ? 'w-full' : ''"
               [item]="skillItem"
-              [styleClass]="
-                'animate-[zoomin_0.5s_ease-in] ' + ((layoutService.isMobile$ | async) ? 'w-full' : 'h-72 w-72')
-              "
+              [styleClass]="'animate-[zoomin_0.5s_ease-in] ' + (layoutService.isMobile() ? 'w-full' : 'h-72 w-72')"
             ></app-tech-card>
           }
         </div>

@@ -1,9 +1,9 @@
-import { Component } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { TooltipModule } from 'primeng/tooltip'
-import { Clipboard } from '@angular/cdk/clipboard'
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TooltipModule } from 'primeng/tooltip';
+import { Clipboard } from '@angular/cdk/clipboard';
 
-import { ToastService } from 'src/app/core/services'
+import { ToastService } from 'src/app/core/services';
 
 @Component({
   selector: 'app-contact',
@@ -13,17 +13,19 @@ import { ToastService } from 'src/app/core/services'
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-  email = 'minhtuan92vt@gmail.com'
-  skype = 'tranminhtuan92'
-  linkedIn = 'https://www.linkedin.com/in/minhtuan92vt'
+  email = 'minhtuan92vt@gmail.com';
+
+  skype = 'tranminhtuan92';
+
+  linkedIn = 'https://www.linkedin.com/in/minhtuan92vt';
 
   constructor(
     private toastService: ToastService,
     private clipboardService: Clipboard
   ) {}
 
-  onClick(string: string) {
-    this.toastService.info('Copied!')
-    this.clipboardService.copy(string)
+  onClick(string: string): void {
+    this.toastService.info('Copied!');
+    this.clipboardService.copy(string);
   }
 }

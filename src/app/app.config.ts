@@ -1,13 +1,13 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core'
-import { provideRouter } from '@angular/router'
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes'
-import { AngularSvgIconModule } from 'angular-svg-icon'
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
-import { provideAnimations } from '@angular/platform-browser/animations'
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
-import { MessageService } from 'primeng/api'
-import { LayoutService, ThemeService } from './core/services'
+import { MessageService } from 'primeng/api';
+import { routes } from './app.routes';
+import { LayoutService, ThemeService } from './core/services';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,4 +19,4 @@ export const appConfig: ApplicationConfig = {
     LayoutService,
     MessageService
   ]
-}
+};

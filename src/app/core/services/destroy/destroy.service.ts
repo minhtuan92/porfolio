@@ -1,11 +1,12 @@
-import { Injectable, OnDestroy } from '@angular/core'
-import { Subject } from 'rxjs'
+import { Injectable, OnDestroy } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable() // not root scope
 export class DestroyService implements OnDestroy {
-  public destroyed$ = new Subject<void>()
+  destroyed$ = new Subject<void>();
+
   ngOnDestroy(): void {
-    this.destroyed$.next()
-    this.destroyed$.complete()
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 }

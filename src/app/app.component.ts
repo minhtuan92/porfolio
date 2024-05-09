@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { RouterOutlet } from '@angular/router'
-import { ToastModule } from 'primeng/toast'
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { ToastModule } from 'primeng/toast';
 
-import { ThemeService } from './core/services'
+import { ThemeService } from './core/services';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +13,11 @@ import { ThemeService } from './core/services'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = "Tuan's Porfolio"
+  title = "Tuan's Porfolio";
 
   constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {
-    this.themeService.updateTheme()
+    this.themeService.updateTheme();
   }
 }

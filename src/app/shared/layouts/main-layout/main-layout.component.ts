@@ -1,15 +1,15 @@
-import { Component, OnInit, inject } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { RouterOutlet } from '@angular/router'
+import { Component, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
-import { SidebarComponent } from '../components/sidebar/sidebar.component'
-import { HeaderComponent } from '../components/header/header.component'
-import { FooterComponent } from '../components/footer/footer.component'
-import { OverlayscrollbarsModule } from 'overlayscrollbars-ngx'
-import { DestroyService, LayoutService, ThemeService } from 'src/app/core/services'
-import { takeUntil } from 'rxjs'
-import { ScrollTopModule } from 'primeng/scrolltop'
-import { AngularSvgIconModule } from 'angular-svg-icon'
+import { OverlayscrollbarsModule } from 'overlayscrollbars-ngx';
+import { DestroyService, LayoutService, ThemeService } from 'src/app/core/services';
+import { takeUntil } from 'rxjs';
+import { ScrollTopModule } from 'primeng/scrolltop';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { FooterComponent } from '../components/footer/footer.component';
+import { HeaderComponent } from '../components/header/header.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-main-layout',
@@ -29,19 +29,22 @@ import { AngularSvgIconModule } from 'angular-svg-icon'
   providers: [DestroyService]
 })
 export class MainLayoutComponent implements OnInit {
-  scrollbarTheme: string
-  private themeService = inject(ThemeService)
-  private destroyService = inject(DestroyService)
-  layoutService = inject(LayoutService)
+  scrollbarTheme: string;
+
+  private themeService = inject(ThemeService);
+
+  private destroyService = inject(DestroyService);
+
+  layoutService = inject(LayoutService);
 
   ngOnInit(): void {
-    this.updateScrollBarTheme()
+    this.updateScrollBarTheme();
     this.themeService.themeChange$.pipe(takeUntil(this.destroyService.destroyed$)).subscribe(() => {
-      this.updateScrollBarTheme()
-    })
+      this.updateScrollBarTheme();
+    });
   }
 
-  updateScrollBarTheme() {
-    this.scrollbarTheme = 'os-theme-' + (this.themeService.currentTheme === 'dark' ? 'light' : 'dark')
+  updateScrollBarTheme(): void {
+    this.scrollbarTheme = `os-theme-${this.themeService.currentTheme === 'dark' ? 'light' : 'dark'}`;
   }
 }

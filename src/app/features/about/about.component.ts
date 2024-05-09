@@ -1,6 +1,6 @@
-import { Component } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { LayoutService } from '@core/services'
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LayoutService } from '@core/services';
 
 @Component({
   selector: 'app-about',

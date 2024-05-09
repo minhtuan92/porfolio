@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { TechCardComponent } from 'src/app/shared/components'
-import { TechCardItem } from '@shared/models'
-import { LayoutService } from '@core/services'
-import { SkillName, SkillType } from '@shared/constants'
+import { TechCardComponent } from 'src/app/shared/components';
+import { TechCardItem } from '@shared/models';
+import { LayoutService } from '@core/services';
+import { SkillName, SkillType } from '@shared/constants';
 
 interface Skill {
-  skillName: string
-  skillItems: TechCardItem[]
+  skillName: string;
+  skillItems: TechCardItem[];
 }
 
 @Component({
@@ -19,19 +19,32 @@ interface Skill {
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  frameworkItems: TechCardItem[]
-  skills: Skill[]
-  mainFEStack: Skill
-  additionalBEStack: Skill
-  frontend: Skill
-  backend: Skill
-  dataBase: Skill
-  versionControl: Skill
-  packageControl: Skill
-  server: Skill
-  os: Skill
-  tools: Skill
-  others: Skill
+  frameworkItems: TechCardItem[];
+
+  skills: Skill[];
+
+  mainFEStack: Skill;
+
+  additionalBEStack: Skill;
+
+  frontend: Skill;
+
+  backend: Skill;
+
+  dataBase: Skill;
+
+  versionControl: Skill;
+
+  packageControl: Skill;
+
+  server: Skill;
+
+  os: Skill;
+
+  tools: Skill;
+
+  others: Skill;
+
   constructor(public layoutService: LayoutService) {}
 
   ngOnInit(): void {
@@ -93,7 +106,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.CSS
         }
       ]
-    }
+    };
 
     this.additionalBEStack = {
       skillName: 'additional back-end technology stack 🎖',
@@ -177,7 +190,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.TOOLS
         }
       ]
-    }
+    };
 
     this.frontend = {
       skillName: 'front-end 🌍',
@@ -303,7 +316,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.TOOLS
         }
       ]
-    }
+    };
 
     this.backend = {
       skillName: 'back-end 📡',
@@ -369,7 +382,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.TOOLS
         }
       ]
-    }
+    };
 
     this.dataBase = {
       skillName: 'database 📚',
@@ -399,7 +412,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.DATABASE
         }
       ]
-    }
+    };
 
     this.versionControl = {
       skillName: 'version control ✨',
@@ -429,7 +442,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.VERSION_CONTROL
         }
       ]
-    }
+    };
 
     this.packageControl = {
       skillName: 'package control 🛒',
@@ -459,7 +472,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.PACKAGE_CONTROL
         }
       ]
-    }
+    };
 
     this.server = {
       skillName: 'server 🖥',
@@ -483,7 +496,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.SERVER
         }
       ]
-    }
+    };
 
     this.os = {
       skillName: 'os 📺',
@@ -501,7 +514,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.OS
         }
       ]
-    }
+    };
 
     this.tools = {
       skillName: 'tools 🔨',
@@ -555,7 +568,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.TOOLS
         }
       ]
-    }
+    };
 
     this.others = {
       skillName: 'others 🎲',
@@ -597,7 +610,7 @@ export class SkillsComponent implements OnInit {
           type: SkillType.OTHERS
         }
       ]
-    }
+    };
 
     this.skills = [
       { ...this.mainFEStack },
@@ -610,6 +623,6 @@ export class SkillsComponent implements OnInit {
       { ...this.os },
       { ...this.tools },
       { ...this.others }
-    ]
+    ];
   }
 }

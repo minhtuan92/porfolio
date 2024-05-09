@@ -17,6 +17,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 })
 export class HomeComponent implements OnInit {
   isMyImageLoading$ = new BehaviorSubject<boolean>(true);
+
   isShowImage = signal<boolean>(false);
 
   constructor(public layoutService: LayoutService) {}

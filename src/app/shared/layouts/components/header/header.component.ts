@@ -61,7 +61,7 @@ export class HeaderComponent {
 
   isMenuShow = false;
 
-  toggleMenu() {
+  toggleMenu(): void {
     this.isMenuShow = !this.isMenuShow;
   }
 }

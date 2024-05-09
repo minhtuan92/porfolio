@@ -1,4 +1,4 @@
-export enum TOAST_SEVERITY {
+export enum ToastSeverity {
   SUCCESS = 'success',
   INFO = 'info',
   WARN = 'warn',

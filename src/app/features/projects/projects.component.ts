@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { ProjectComponent } from '@shared/components'
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ProjectComponent } from '@shared/components';
 
-import { ProjectItem } from '@shared/models'
+import { ProjectItem } from '@shared/models';
 
 @Component({
   selector: 'app-projects',
@@ -12,7 +12,7 @@ import { ProjectItem } from '@shared/models'
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-  projects: ProjectItem[]
+  projects: ProjectItem[];
 
   ngOnInit(): void {
     this.projects = [
@@ -86,6 +86,6 @@ export class ProjectsComponent implements OnInit {
               
               Technologies: junit, java, selenium.`
       }
-    ]
+    ];
   }
 }

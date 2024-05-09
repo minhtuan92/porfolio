@@ -1,4 +1,4 @@
-export enum SCREEN_SIZE {
+export enum ScreenSize {
   XSMALL = 'XSmall',
   SMALL = 'Small',
   MEDIUM = 'Medium',

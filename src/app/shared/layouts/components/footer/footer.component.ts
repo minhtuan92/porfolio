@@ -1,14 +1,14 @@
-import { Component } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { AngularSvgIconModule } from 'angular-svg-icon'
-import { RouterLink } from '@angular/router'
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { RouterLink } from '@angular/router';
 
-import { DarkmodeButtonComponent } from '@shared/components'
-import { LayoutService } from '@core/services'
+import { DarkmodeButtonComponent } from '@shared/components';
+import { LayoutService } from '@core/services';
 
 interface SocialApp {
-  icon: string
-  link: string
+  icon: string;
+  link: string;
 }
 @Component({
   selector: 'app-footer',
@@ -33,5 +33,5 @@ export class FooterComponent {
       icon: 'github',
       link: 'https://github.com/minhtuan92'
     }
-  ]
+  ];
 }

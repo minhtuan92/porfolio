@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common'
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core'
-import { LayoutService, ThemeService } from '@core/services'
-import { LOCALSTORAGE_ITEMS, THEME_OPTIONS } from '@shared/constants'
-import { AngularSvgIconModule } from 'angular-svg-icon'
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { LayoutService, ThemeService } from '@core/services';
+import { LOCALSTORAGE_ITEMS, THEME_OPTIONS } from '@shared/constants';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @Component({
   selector: 'app-darkmode-button',
@@ -13,28 +13,30 @@ import { AngularSvgIconModule } from 'angular-svg-icon'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DarkmodeButtonComponent implements OnInit {
-  darkModeActive = false
-  layoutService = inject(LayoutService)
-  private themeService = inject(ThemeService)
+  darkModeActive = false;
+
+  layoutService = inject(LayoutService);
+
+  private themeService = inject(ThemeService);
 
   ngOnInit(): void {
-    const theme = this.themeService.currentTheme
+    const theme = this.themeService.currentTheme;
     if (theme === THEME_OPTIONS.LIGHT) {
-      this.darkModeActive = false
+      this.darkModeActive = false;
     } else if (theme === THEME_OPTIONS.DARK) {
-      this.darkModeActive = true
+      this.darkModeActive = true;
     }
   }
 
-  handleToggleTheme() {
-    const theme = this.themeService.currentTheme
+  handleToggleTheme(): void {
+    const theme = this.themeService.currentTheme;
     if (theme === THEME_OPTIONS.LIGHT) {
-      localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, THEME_OPTIONS.DARK)
-      this.darkModeActive = true
+      localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, THEME_OPTIONS.DARK);
+      this.darkModeActive = true;
     } else if (theme === THEME_OPTIONS.DARK) {
-      localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, THEME_OPTIONS.LIGHT)
-      this.darkModeActive = false
+      localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, THEME_OPTIONS.LIGHT);
+      this.darkModeActive = false;
     }
-    this.themeService.updateTheme()
+    this.themeService.updateTheme();
   }
 }

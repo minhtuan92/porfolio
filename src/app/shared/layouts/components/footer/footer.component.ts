@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { RouterLink } from '@angular/router';
@@ -18,7 +18,7 @@ interface SocialApp {
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  constructor(public layoutService: LayoutService) {}
+  layoutService = inject(LayoutService);
 
   socialApps: SocialApp[] = [
     {

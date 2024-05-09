@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TechCardComponent } from 'src/app/shared/components';
@@ -45,7 +45,7 @@ export class SkillsComponent implements OnInit {
 
   others: Skill;
 
-  constructor(public layoutService: LayoutService) {}
+  layoutService = inject(LayoutService);
 
   ngOnInit(): void {
     this.mainFEStack = {

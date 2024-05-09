@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { LayoutService } from '@core/services';
@@ -11,5 +11,5 @@ import { LayoutService } from '@core/services';
   styleUrls: ['./resume.component.css']
 })
 export class ResumeComponent {
-  constructor(public layoutService: LayoutService) {}
+  layoutService = inject(LayoutService);
 }

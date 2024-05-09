@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TooltipModule } from 'primeng/tooltip';
 import { Clipboard } from '@angular/cdk/clipboard';
@@ -19,10 +19,9 @@ export class ContactComponent {
 
   linkedIn = 'https://www.linkedin.com/in/minhtuan92vt';
 
-  constructor(
-    private toastService: ToastService,
-    private clipboardService: Clipboard
-  ) {}
+  toastService = inject(ToastService);
+
+  clipboardService = inject(Clipboard);
 
   onClick(string: string): void {
     this.toastService.info('Copied!');

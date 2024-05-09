@@ -1,11 +1,14 @@
-import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SkeletonModule } from 'primeng/skeleton';
 import { AnimateModule } from 'primeng/animate';
-import { LayoutService } from '@core/services';
-import { FooterComponent } from '@shared/layouts';
+
 import { BehaviorSubject, debounceTime, take } from 'rxjs';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+
+import { DEFAULT_DEBOUNCE_TIME_MS } from '@shared/constants';
+import { LayoutService } from '@core/services';
+import { FooterComponent } from '@shared/layouts';
 
 @Component({
   selector: 'app-home',
@@ -20,10 +23,10 @@ export class HomeComponent implements OnInit {
 
   isShowImage = signal<boolean>(false);
 
-  constructor(public layoutService: LayoutService) {}
+  layoutService = inject(LayoutService);
 
   ngOnInit(): void {
-    this.isMyImageLoading$.pipe(debounceTime(500), take(1)).subscribe(() => {
+    this.isMyImageLoading$.pipe(debounceTime(DEFAULT_DEBOUNCE_TIME_MS), take(1)).subscribe(() => {
       this.isShowImage.set(true);
     });
   }

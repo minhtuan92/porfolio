@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutService } from '@core/services';
 
@@ -10,5 +10,5 @@ import { LayoutService } from '@core/services';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  constructor(public layoutService: LayoutService) {}
+  layoutService = inject(LayoutService);
 }

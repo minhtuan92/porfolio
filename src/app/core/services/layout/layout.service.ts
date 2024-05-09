@@ -1,16 +1,7 @@
-import {
-  Injectable,
-  OnDestroy,
-  Optional,
-  Signal,
-  SkipSelf,
-  WritableSignal,
-  computed,
-  inject,
-  signal
-} from '@angular/core';
+import { Injectable, Optional, SkipSelf, computed, inject, signal } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
+import { takeUntil } from 'rxjs';
+import { injectDestroy } from 'ngxtension/inject-destroy';
 
 import { EnsureLoadedOnceGuard } from '@shared/utils';
 import { ScreenSize } from '@shared/constants';
@@ -27,24 +18,24 @@ const DisplayNameMap = new Map([
 @Injectable({
   providedIn: 'root'
 })
-export class LayoutService extends EnsureLoadedOnceGuard implements OnDestroy {
+export class LayoutService extends EnsureLoadedOnceGuard {
   currentScreenSize: string;
 
-  private destroyed$ = new Subject<void>();
+  private $screenSize = signal<string>('');
 
-  private screenSizeChanged = new BehaviorSubject<string>('');
+  readonly screenSize = computed(this.$screenSize);
 
-  readonly screenSizeChanged$ = this.screenSizeChanged.asObservable();
+  private $isMobile = signal<boolean>(false);
 
-  private $isMobile: WritableSignal<boolean> = signal<boolean>(false);
+  readonly isMobile = computed(this.$isMobile);
 
-  readonly isMobile: Signal<boolean> = computed(this.$isMobile);
+  private destroyed$ = injectDestroy();
 
-  private breakpointObserver = inject(BreakpointObserver);
+  private breakpointObserver$ = inject(BreakpointObserver);
 
   constructor(@Optional() @SkipSelf() parent: LayoutService) {
     super(parent);
-    this.breakpointObserver
+    this.breakpointObserver$
       .observe([...DisplayNameMap.keys()])
       .pipe(takeUntil(this.destroyed$))
       .subscribe((result) => {
@@ -60,12 +51,7 @@ export class LayoutService extends EnsureLoadedOnceGuard implements OnDestroy {
             this.currentScreenSize === ScreenSize.WEB_LANDSCAPE
           )
         );
-        this.screenSizeChanged.next(this.currentScreenSize);
+        this.$screenSize.set(this.currentScreenSize);
       });
-  }
-
-  ngOnDestroy(): void {
-    this.destroyed$.next();
-    this.destroyed$.complete();
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable, Optional, SkipSelf } from '@angular/core';
+import { Injectable, Optional, SkipSelf, inject } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
 import { ToastSeverity } from 'src/app/shared/constants';
@@ -8,10 +8,9 @@ import { EnsureLoadedOnceGuard } from 'src/app/shared/utils';
   providedIn: 'root'
 })
 export class ToastService extends EnsureLoadedOnceGuard {
-  constructor(
-    @Optional() @SkipSelf() parent: ToastService,
-    private messageService: MessageService
-  ) {
+  private messageService = inject(MessageService);
+
+  constructor(@Optional() @SkipSelf() parent: ToastService) {
     super(parent);
   }
 

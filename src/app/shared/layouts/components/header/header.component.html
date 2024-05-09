@@ -71,12 +71,12 @@
   [popup]="true"
   [styleClass]="
     '!bg-pastel-placebo/80 dark:!bg-dark-knight/80 !backdrop-blur-lg flex flex-col items-center justify-center ' +
-    ((layoutService.screenSizeChanged$ | async)?.includes('Handset') ? 'w-full h-dvh' : '')
+    (layoutService.screenSize().includes('Handset') ? 'w-full h-dvh' : '')
   "
   (onHide)="isMenuShow = false"
 >
 </p-menu>
-@if ((layoutService.screenSizeChanged$ | async)?.includes('Handset') && isMenuShow === true) {
+@if (layoutService.screenSize().includes('Handset') && isMenuShow === true) {
   <button
     type="button"
     title="Close Menu"

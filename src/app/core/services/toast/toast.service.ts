@@ -1,8 +1,8 @@
 import { Injectable, Optional, SkipSelf, inject } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
-import { ToastSeverity } from 'src/app/shared/constants';
-import { EnsureLoadedOnceGuard } from 'src/app/shared/utils';
+import { ToastSeverity } from '@shared/constants';
+import { EnsureLoadedOnceGuard } from '@shared/utils';
 
 @Injectable({
   providedIn: 'root'

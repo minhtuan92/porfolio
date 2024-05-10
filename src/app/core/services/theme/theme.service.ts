@@ -1,16 +1,16 @@
 import { ApplicationRef, Injectable, Optional, SkipSelf, inject } from '@angular/core';
 import { Subject } from 'rxjs';
 
-import { EnsureLoadedOnceGuard } from 'src/app/shared/utils';
-import { LOCALSTORAGE_ITEMS, THEME_OPTIONS } from 'src/app/shared/constants';
+import { EnsureLoadedOnceGuard } from '@shared/utils';
+import { LOCALSTORAGE_ITEMS, THEME_OPTIONS } from '@shared/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService extends EnsureLoadedOnceGuard {
-  private themeChangeSubject = new Subject<void>();
+  private themeChangeSubject$ = new Subject<void>();
 
-  themeChange$ = this.themeChangeSubject.asObservable();
+  themeChange$ = this.themeChangeSubject$.asObservable();
 
   currentTheme: string;
 
@@ -20,7 +20,7 @@ export class ThemeService extends EnsureLoadedOnceGuard {
     super(parent);
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
       this.updateTheme();
-      this.themeChangeSubject.next();
+      this.themeChangeSubject$.next();
 
       // Trigger refresh of UI
       this.appRef.tick();
@@ -42,7 +42,7 @@ export class ThemeService extends EnsureLoadedOnceGuard {
       if (!theme) localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, THEME_OPTIONS.DARK);
       this.currentTheme = THEME_OPTIONS.DARK;
     }
-    this.themeChangeSubject.next();
+    this.themeChangeSubject$.next();
   }
 
   addDarkClass(): void {

@@ -42,7 +42,7 @@
     </div>
     <div class="flex w-full justify-center lg:w-1/2">
       <img
-        class="max-w-full animate-[zoomin_0.5s_ease-in-out] rounded-3xl lg:min-h-[26.25rem] lg:w-[22rem]"
+        class="max-w-full animate-[zoomin_0.5s_ease-in-out] rounded-3xl lg:min-h-[26.25rem] lg:max-w-[30rem]"
         [hidden]="!isShowImage()"
         src="./assets/images/my-image.jpg"
         alt="My Image"
@@ -50,7 +50,7 @@
       />
       @if (!isShowImage()) {
         <p-skeleton
-          styleClass="bg-gray-300 !w-[calc(100vw-2rem)] md:!w-[calc(100vw-14rem)] !h-[18rem] sm:!h-[22rem] md:!h-[26rem] !rounded-[1.5rem] dark:bg-mirage animate-[fadeinright_0.2s_linear] lg:min-h-[26.25rem] lg:!w-[22rem]"
+          styleClass="bg-gray-300 !w-[calc(100vw-2rem)] md:!w-[calc(100vw-14rem)] !h-[18rem] sm:!h-[22rem] md:!h-[26rem] !rounded-[1.5rem] dark:bg-mirage animate-[fadeinright_0.2s_linear] lg:min-h-[26.25rem] lg:!w-[30rem]"
         ></p-skeleton>
       }
     </div>

@@ -45,7 +45,17 @@
           </div>
         }
       </div>
-      <p-scrollTop target="parent" styleClass="fixed dark:bg-manganese-black bg-pastel-placebo"></p-scrollTop>
+      <p-scrollTop target="parent" styleClass="fixed dark:bg-manganese-black bg-pastel-placebo">
+        <ng-template pTemplate="icon">
+          <svg-icon
+            [applyClass]="true"
+            viewBox="auto"
+            src="assets/icons/svg/chevron-up.svg"
+            class="h-6 w-6 stroke-manganese-black dark:stroke-pastel-placebo"
+          >
+          </svg-icon>
+        </ng-template>
+      </p-scrollTop>
     </div>
     @if (layoutService.isMobile() === false) {
       <app-footer />

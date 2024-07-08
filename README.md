@@ -1,4 +1,4 @@
-# MyPorfolio
+# MyPortfolio
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
@@ -19,7 +19,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Conditional rendering
 - Github Pages Hosting
 
-Hosted the app on [Github Page](https://minhtuan92.github.io/porfolio/)
+Hosted the app on [Github Page](https://minhtuan92.github.io/portfolio/)
 
 ## Development server
 

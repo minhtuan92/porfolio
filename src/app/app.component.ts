@@ -13,7 +13,7 @@ import { ThemeService } from './core/services';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = "Tuan's Porfolio";
+  title = "Tuan's Portfolio";
 
   constructor(private themeService: ThemeService) {}
 

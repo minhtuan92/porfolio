@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TechCardComponent } from 'src/app/shared/components';
+import { TechCardComponent } from '@shared/components';
 import { TechCardItem } from '@shared/models';
 import { LayoutService } from '@core/services';
 import { SkillName, SkillType } from '@shared/constants';

@@ -13,7 +13,7 @@
         <span class="whitespace-pre-line">{{ project().desc }}</span>
       </div>
     </div>
-    @if (project().image && layoutService.isMobile() === false) {
+    @if (project().image && !layoutService.isMobile()) {
       @if (!project().image?.endsWith('.svg')) {
         <img class="w-96" [src]="project().image" alt="Project" />
       } @else {

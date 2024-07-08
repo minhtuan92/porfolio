@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ToastModule } from 'primeng/toast';
 
-import { ThemeService } from './core/services';
+import { ThemeService } from '@core/services';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ import { ThemeService } from './core/services';
 export class AppComponent implements OnInit {
   title = "Tuan's Portfolio";
 
-  constructor(private themeService: ThemeService) {}
+  themeService = inject(ThemeService);
 
   ngOnInit(): void {
     this.themeService.updateTheme();

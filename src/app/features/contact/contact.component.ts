@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TooltipModule } from 'primeng/tooltip';
 import { Clipboard } from '@angular/cdk/clipboard';
 
-import { ToastService } from 'src/app/core/services';
+import { ToastService } from '@core/services';
 
 @Component({
   selector: 'app-contact',

@@ -7,7 +7,9 @@ import { ScrollTopModule } from 'primeng/scrolltop';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { injectDestroy } from 'ngxtension/inject-destroy';
 
-import { LayoutService, ThemeService } from 'src/app/core/services';
+import { ThemeOptions } from '@shared/constants';
+import { LayoutService, ThemeService } from '@core/services';
+
 import { FooterComponent } from '../components/footer/footer.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
@@ -45,6 +47,6 @@ export class MainLayoutComponent implements OnInit {
   }
 
   updateScrollBarTheme(): void {
-    this.scrollbarTheme = `os-theme-${this.themeService.currentTheme === 'dark' ? 'light' : 'dark'}`;
+    this.scrollbarTheme = `os-theme-${this.themeService.currentTheme === ThemeOptions.DARK ? ThemeOptions.LIGHT : ThemeOptions.DARK}`;
   }
 }

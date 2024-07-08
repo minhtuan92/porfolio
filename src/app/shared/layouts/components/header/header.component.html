@@ -9,11 +9,11 @@
     [routerLinkActive]="layoutService.isMobile() ? 'router-link-active' : ''"
   >
     <p>// Tuan Tran</p>
-    @if (layoutService.isMobile() === false) {
+    @if (!layoutService.isMobile()) {
       <p class="text-green-haze dark:text-screen-glow">&nbsp;web_dev</p>
     }
   </a>
-  @if (layoutService.isMobile() === false) {
+  @if (!layoutService.isMobile()) {
     <nav class="navigation flex h-full grow justify-between">
       <div class="flex items-center">
         @for (nav of mainNav; track nav.id) {
@@ -76,7 +76,7 @@
   (onHide)="isMenuShow = false"
 >
 </p-menu>
-@if (layoutService.screenSize().includes('Handset') && isMenuShow === true) {
+@if (layoutService.screenSize().includes('Handset') && isMenuShow) {
   <button
     type="button"
     title="Close Menu"

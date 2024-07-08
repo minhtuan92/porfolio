@@ -13,11 +13,11 @@ import { LayoutService } from '@core/services';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SidebarComponent {
+  layoutService = inject(LayoutService);
+
   lineNumbers = computed<number[]>(() => {
     return this.calculateLineNumbers(this.layoutService.screenSize());
   });
-
-  layoutService = inject(LayoutService);
 
   calculateLineNumbers(screenSize: string): number[] {
     const screenHeight = window.outerHeight;

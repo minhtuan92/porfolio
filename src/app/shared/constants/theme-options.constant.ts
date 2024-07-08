@@ -1,5 +1,5 @@
-export const THEME_OPTIONS = {
-  DARK: 'dark',
-  LIGHT: 'light',
-  SYSTEM: 'system'
-};
+export enum ThemeOptions {
+  DARK = 'dark',
+  LIGHT = 'light',
+  SYSTEM = 'system'
+}

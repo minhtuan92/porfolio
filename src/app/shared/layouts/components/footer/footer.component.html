@@ -30,7 +30,7 @@
       </a>
     </nav>
   </div>
-  @if (layoutService.isMobile() === false) {
+  @if (!layoutService.isMobile()) {
     <div class="h-full flex-1 border-t border-[rgba(34,49,79,0.10)] dark:border-manganese-black"></div>
   }
   <div
@@ -41,7 +41,7 @@
     "
     class="flex h-full items-center justify-center"
   >
-    @if (layoutService.isMobile() === false) {
+    @if (!layoutService.isMobile()) {
       <app-darkmode-button></app-darkmode-button>
     }
     <span

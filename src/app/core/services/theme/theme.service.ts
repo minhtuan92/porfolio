@@ -2,19 +2,19 @@ import { ApplicationRef, Injectable, Optional, SkipSelf, inject } from '@angular
 import { Subject } from 'rxjs';
 
 import { EnsureLoadedOnceGuard } from '@shared/utils';
-import { LOCALSTORAGE_ITEMS, THEME_OPTIONS } from '@shared/constants';
+import { LOCALSTORAGE_ITEMS, ThemeOptions } from '@shared/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService extends EnsureLoadedOnceGuard {
+  private appRef = inject(ApplicationRef);
+
   private themeChangeSubject$ = new Subject<void>();
 
   themeChange$ = this.themeChangeSubject$.asObservable();
 
-  currentTheme: string;
-
-  private appRef = inject(ApplicationRef);
+  currentTheme: ThemeOptions;
 
   constructor(@Optional() @SkipSelf() parent: ThemeService) {
     super(parent);
@@ -29,27 +29,27 @@ export class ThemeService extends EnsureLoadedOnceGuard {
 
   updateTheme(): void {
     const theme = localStorage.getItem(LOCALSTORAGE_ITEMS.THEME) || '';
-    if (theme === THEME_OPTIONS.LIGHT) {
+    if (theme === ThemeOptions.LIGHT) {
       this.removeDarkClass();
-      this.currentTheme = THEME_OPTIONS.LIGHT;
-    } else if (theme === THEME_OPTIONS.SYSTEM) {
+      this.currentTheme = ThemeOptions.LIGHT;
+    } else if (theme === ThemeOptions.SYSTEM) {
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         this.addDarkClass();
       } else this.removeDarkClass();
-      this.currentTheme = THEME_OPTIONS.SYSTEM;
+      this.currentTheme = ThemeOptions.SYSTEM;
     } else {
       this.addDarkClass();
-      if (!theme) localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, THEME_OPTIONS.DARK);
-      this.currentTheme = THEME_OPTIONS.DARK;
+      if (!theme) localStorage.setItem(LOCALSTORAGE_ITEMS.THEME, ThemeOptions.DARK);
+      this.currentTheme = ThemeOptions.DARK;
     }
     this.themeChangeSubject$.next();
   }
 
-  addDarkClass(): void {
+  private addDarkClass(): void {
     document.documentElement.classList.add('dark');
   }
 
-  removeDarkClass(): void {
+  private removeDarkClass(): void {
     document.documentElement.classList.remove('dark');
   }
 }

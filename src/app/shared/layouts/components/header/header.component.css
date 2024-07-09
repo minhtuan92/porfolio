@@ -1,23 +1,22 @@
-:host ::ng-deep {
+:host {
   .router-link-active,
-  .p-menuitem-link-active > .p-menuitem-text {
+  ::ng-deep .p-menuitem-link-active > .p-menuitem-text {
     @apply !text-green-haze dark:!text-screen-glow;
   }
 
-  .p-menu .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover,
-  .p-menu .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
+  ::ng-deep .p-menu .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover,
+  ::ng-deep .p-menu .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus > .p-menuitem-content {
     @apply bg-transparent;
   }
 
-  .p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link {
+  ::ng-deep .p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link {
     @apply flex items-center justify-center p-4;
+    & .p-menuitem-text {
+      @apply text-manganese-black dark:text-pastel-placebo;
+    }
   }
 
-  .p-menu .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
-    @apply text-manganese-black dark:text-pastel-placebo;
-  }
-
-  .p-menu .p-menuitem-text {
+  ::ng-deep .p-menu .p-menuitem-text {
     @apply text-2xl;
   }
 }
